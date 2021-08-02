@@ -1,22 +1,8 @@
 ---
-title: Kasundi
-description: Amazing on eggs or toasted cheese.
-author: Dave Lim
-source: https://www.ceresfairfood.org.au/recipe/kasundi/
-serves: 1 big jar
-ingredients:
-- 3 tablespoon sunflower oil
-- 1 tablespoon mustard seeds
-- 1 tablespoon ground cumin
-- 1 tablespoon cayenne pepper
-- 2 teaspoon ground turmeric
-- big thumb-sized knob of ginger, grated
-- 5 cloves garlic, crushed
-- 1 fresh chilli, seeded & finely diced
-- 2 x 400g tins of tomatoes
-- ¾ cup malt or apple cider vinegar
-- ¼ cup sugar
-- 1 teaspoon salt
+title: tensor networks and topology
+description: small introduction to tensor networks and an overview of work applying them to topological phases
+
+
 
 ---
 
