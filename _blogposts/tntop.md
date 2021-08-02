@@ -15,6 +15,14 @@ Add the fresh ginger, garlic and chilli and cook for another few minutes.
 
 Add remaining ingredients and simmer for an hour.
 
+
+<div class="hello">
+  <p>
+Half recipe for a single person amount.
+  </p>
+</div>
+
+
 <div class="cooksnote">
   <p>
 Half recipe for a single person amount.
