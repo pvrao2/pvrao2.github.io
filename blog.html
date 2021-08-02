@@ -15,10 +15,10 @@ layout: default
   <div class="">
   </div>
   <div class="">
-    {% assign recipes_sorted = site.recipes | sort: "title" %}
+    {% assign recipes_sorted = site.blogposts | sort: "title" %}
     {% for recipe in recipes_sorted %}
     <p class="colspan-2">
-      <strong><a href="{{ blogposts.url }}">{{ recipe.title }}</a></strong>
+      <strong><a href="{{ blog.url }}">{{ recipe.title }}</a></strong>
       {% unless recipe.author == nil %}
       <span> / {{ recipe.author }}</span>
       {% endunless %}
