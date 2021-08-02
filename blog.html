@@ -18,7 +18,7 @@ layout: default
     {% assign recipes_sorted = site.recipes | sort: "title" %}
     {% for recipe in recipes_sorted %}
     <p class="colspan-2">
-      <strong><a href="{{ blogpost.url }}">{{ recipe.title }}</a></strong>
+      <strong><a href="{{ blogposts.url }}">{{ recipe.title }}</a></strong>
       {% unless recipe.author == nil %}
       <span> / {{ recipe.author }}</span>
       {% endunless %}
