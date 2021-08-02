@@ -45,8 +45,11 @@ include:
 
 collections:
   - recipes
+  - posts
 collections:
   recipes:
+    output: true
+  posts:
     output: true
 permalink: /:title/
 
@@ -58,6 +61,6 @@ defaults:
       layout: "recipe"
   - scope:
       path: ""
-      type: "blogposts"
+      type: "posts"
     values:
-      layout: "recipe"
+      layout: "post"
