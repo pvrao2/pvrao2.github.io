@@ -7,7 +7,7 @@ layout: default
   <div class="">
       <h1>{{ page.title }}</h1>
       <p class="lede">
-       
+      </p>
   </div>
 </div>
 <div class="container recipe">
@@ -15,14 +15,14 @@ layout: default
   </div>
   <div class="">
     {% assign recipes_sorted = site.blogposts | sort: "title" %}
-    {% for recipe in recipes_sorted %}
+    {% for blogpost in blogposts_sorted %}
     <p class="colspan-2">
       <strong><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></strong>
-      {% unless recipe.author == nil %}
-      <span> / {{ recipe.author }}</span>
+      {% unless blogpost.author == nil %}
+      <span> / {{ blogpost.author }}</span>
       {% endunless %}
     </p class="colspan-2">
     {% endfor %}
-    <span>{{ recipe.author }}</span>
+    <span>{{ blogpost.author }}</span>
   </div>
 </div>
