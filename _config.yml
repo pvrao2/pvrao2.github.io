@@ -56,3 +56,8 @@ defaults:
       type: "recipes"
     values:
       layout: "recipe"
+  - scope:
+      path: ""
+      type: "blogposts"
+    values:
+      layout: "recipe"
