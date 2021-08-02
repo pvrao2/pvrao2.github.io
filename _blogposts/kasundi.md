@@ -1,6 +1,6 @@
 ---
 title: tensor networks and topology
-author: 8/2/21
+author: 8.2.21
 description: small introduction to tensor networks and an overview of work applying them to topological phases
 
 
