@@ -14,7 +14,7 @@ layout: default
   <div class="">
   </div>
   <div class="">
-    {% assign recipes_sorted = site.blogposts | sort: "title" %}
+    {% assign blogposts_sorted = site.blogposts | sort: "title" %}
     {% for blogpost in blogposts_sorted %}
     <p class="colspan-2">
       <strong><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></strong>
