@@ -49,7 +49,7 @@ collections:
 collections:
   recipes:
     output: true
-  posts:
+  blogposts:
     output: true
 permalink: /:title/
 
@@ -61,6 +61,6 @@ defaults:
       layout: "recipe"
   - scope:
       path: ""
-      type: "posts"
+      type: "blogposts"
     values:
-      layout: "post"
+      layout: "blogpost"
