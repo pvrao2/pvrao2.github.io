@@ -9,18 +9,5 @@ description: overview of tensor networks & their application to topological matt
 
 ---
 
-<h1> Loosely chop tomotoes. </h1>
+<h2> tensor networks & topology </h2>
 
-Heat oil in a large saucepan. Add seeds and powdered spices, and stir for 3–4 minutes until fragrant.
-
-Add the fresh ginger, garlic and chilli and cook for another few minutes.
-
-Add remaining ingredients and simmer for an hour.
-
-
-
-<div class="cooksnote">
-  <p>
-Half recipe for a single person amount.
-  </p>
-</div>
