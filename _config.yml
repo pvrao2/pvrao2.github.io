@@ -54,11 +54,7 @@ collections:
 permalink: /:title/
 
 defaults:
-  - scope:
-      path: ""
-      type: "recipes"
-    values:
-      layout: "recipe"
+
   - scope:
       path: ""
       type: "blogposts"
