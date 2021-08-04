@@ -525,3 +525,16 @@ a.nav__logo {
 .nowrap {
   white-space: nowrap;
 }
+
+.container2 {
+  //max-width: 54em;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  display: grid;
+  grid-column-gap:80px;
+  grid-template-columns: 1fr;
+  @media only screen and (min-width: 60em) {
+    padding: 0 3rem;
+    padding: 0 8vw;
+  }
