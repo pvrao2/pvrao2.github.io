@@ -15,7 +15,7 @@ layout: default
   <div class="">
   </div>
   <div class="">
-    {% assign recipes_sorted = site.recipes | sort: "date" %}
+    {% assign recipes_sorted = site.recipes | sort: "title" %}
     {% for recipe in recipes_sorted %}
     <p class="colspan-2">
       <strong><a href="{{ recipe.url }}">{{ recipe.title }}</a></strong>
