@@ -18,8 +18,8 @@ layout: default
     {% for blogpost in blogposts_sorted %}
     <p class="colspan-2">
       <strong><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></strong>
-      {% unless blogpost.author == nil %}
-      <span> / {{ blogpost.author }}</span>
+      {% unless blogpost.date == nil %}
+      <span> / {{ blogpost.date }}</span>
       {% endunless %}
     </p class="colspan-2">
     {% endfor %}
