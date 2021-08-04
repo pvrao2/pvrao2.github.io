@@ -17,13 +17,13 @@ layout: default
     {% assign blogposts_sorted = site.blogposts | sort: "title" %}
     {% for blogpost in blogposts_sorted %}
     <p class="colspan-2">
-      <strong><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></strong>
-      {% unless blogpost.date == nil %}
-      <span> / {{ blogpost.date.toDateString() }}</span>
+      <strong><a href="{{ blogpost.url }}">{{ blogpost.description }}</a></strong>
+      {% unless blogpost.description == nil %}
+      <span> / {{ blogpost.description }}</span>
       {% endunless %}
     </p class="colspan-2">
     {% endfor %}
-    <span>{{ blogpost.date.toDateString() }}</span>
+    <span>{{ blogpost.description }}</span>
   </div>
 </div>
 
