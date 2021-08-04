@@ -1,5 +1,4 @@
 ---
-layout:blogpost
 title: tensor networks & topology
 description: small introduction to tensor networks and an overview of work applying them to topological phases
 
