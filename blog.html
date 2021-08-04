@@ -17,7 +17,7 @@ layout: default
     {% assign blogposts_sorted = site.blogposts | sort: "title" %}
     {% for blogpost in blogposts_sorted %}
     <p class="colspan-2">
-      <a href="{{ blogpost.url }}">{{ blogpost.title }}</a>
+      <strong><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></strong>
     </p>
     {% endfor %}
   </div>
