@@ -1,5 +1,5 @@
 ---
-
+layout:blogpost
 title: tensor networks & topology
 author: 8.2.21
 description: small introduction to tensor networks and an overview of work applying them to topological phases
