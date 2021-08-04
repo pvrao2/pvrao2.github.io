@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<div class="container recipe">
-  <section class="recipe__section recipe__meta">
-    <div class="recipe__title">
+<div class="container blogpost">
+  <section class="blogpost__section blogpost__meta">
+    <div class="blogpost__title">
 
       <h1>
-        <a class="recipe__back-link" href="/blogposts/">&larr;</a>
+        <a class="blogpost__back-link" href="/blogposts/">&larr;</a>
         {{ page.title }}</h1>
  
   </section>
-  <section class="recipe__section recipe__method">
+  <section class="blogpost__section recipe__method">
     {% unless page.description == nil %}
       <p class="lede">
         {{ page.description }}
@@ -20,7 +20,7 @@ layout: default
     {{ content }}
   </section>
 
-  <section class="recipe__footer">
+  <section class="blogpost__footer">
     <a href="/blog/">&larr; All posts</a>
   </section>
 
