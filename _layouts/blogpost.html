@@ -3,10 +3,35 @@ layout: default
 ---
 
 <div class="container recipe">
- <div class="recipe__details">
-   <section class="recipe__section recipe__meta">
-   </section>
-   <section class="recipe__section recipe__method">
+  <section class="recipe__section recipe__meta">
+    <div class="recipe__title">
+
+      <h1>
+        <a class="recipe__back-link" href="/recipes/">&larr;</a>
+        {{ page.title }}</h1>
+    </div>
+    <div class="recipe__details">
+      {% unless page.author == nil %}
+        <p><strong>{{ page.author }}</strong></p>
+      {% endunless %}
+      {% unless page.serves == nil %}
+        <p>{{ page.serves }}</p>
+      {% endunless %}
+      {% unless page.source == nil %}
+        <p><a href="{{ page.source }}">Source</a></p>
+      {% endunless %}
+    </div>
+    <div class="recipe__ingredients">
+      {% unless page.ingredients == nil %}
+        {% for ingredient in page.ingredients %}
+          <p>{{ ingredient }}</p>
+        {% endfor %}
+      {% else %}
+          <p>None</p>
+      {% endunless %}
+    </div>
+  </section>
+  <section class="recipe__section recipe__method">
     {% unless page.description == nil %}
       <p class="lede">
         {{ page.description }}
@@ -16,8 +41,6 @@ layout: default
   </section>
 
   <section class="recipe__footer">
-    <a href="/blog/">&larr; All posts</a>
+    <a href="/recipes/">&larr; All recipes</a>
   </section>
-  
-  </div>
 </div>
