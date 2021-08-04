@@ -2,7 +2,7 @@
 
 layout: blogpost
 title: tensor networks & topology
-date: 8.2.21
+date: August 2, 2021
 description: small introduction to tensor networks and an overview of work applying them to topological phases
 
 
