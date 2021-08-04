@@ -5,6 +5,12 @@ layout: default
 <div class="container blogpost">
  
   <section class="recipe__section recipe__method">
+    {% unless page.description == nil %}
+      <p class="lede">
+        {{ page.description }}
+      </p>
+    {% endunless %}
+    {{ content }}
   </section>
   <section class="recipe__footer">
     <a href="/blog/">&larr; All posts</a>
