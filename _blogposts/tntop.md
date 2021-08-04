@@ -3,7 +3,7 @@
 layout: blogpost
 title: tensor networks & topology
 date: August 2, 2021
-description: overview of tensor networks \& their application to topological matter
+description: overview of tensor networks & their application to topological matter
 
 
 
