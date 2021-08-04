@@ -2,6 +2,8 @@
 ---
 @import 'normalize';
 
+@import "minimal-mistakes";
+
 @mixin fface($name, $filename, $weight) {
   @font-face {
     font-family: $name;
