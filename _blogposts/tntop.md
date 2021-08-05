@@ -12,14 +12,3 @@ description: overview of tensor networks & their application to topological matt
 <h2> tensor networks & topology </h2>
 
 This is a post
-
-$$ x = \eta^H $$
-
-<div class="cooksnote">
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-import scipy.stats as spst
-```
-  </div>
-  
