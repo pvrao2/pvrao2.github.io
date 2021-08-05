@@ -15,8 +15,11 @@ This is a post
 
 $$ x = \eta^H $$
 
+<div class="cooksnote">
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as spst
 ```
+  </div>
+  
