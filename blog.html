@@ -16,7 +16,7 @@ layout: default
   <div class="">  
     {% for blogpost in site.blogposts %}
     <p class="colspan-2">
-      <li> <strong><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></strong> </li>
+      <li> <strong><a href="{{ blogpost.url }}">{{ blogpost.title }}</a></strong> </li> ({{blogpost.date}})
     </p>
     {% endfor %}
   </div>
