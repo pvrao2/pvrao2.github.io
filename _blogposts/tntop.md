@@ -15,13 +15,13 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 
 We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both compressing classical images and quantum states of gapped hamiltonians relies on a key principle - the singular value decomposition (SVD).
 
-SVD factorizes a \(m \times n\)matrix $M$ into a product of two unitary matrices and a diagonal matrix:
+SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matrices and a diagonal matrix:
  
-\[ M = U \Sigma V^\dagger \]
+ $$M = U \Sigma V^\dagger$$
 
-Here $U$ and $V^\dagger$ are both semi-unitary matrices, which are $n \times k$ and $k \times m$ respectively, and the matrix of singular values $\Sigma$ is diagonal and has rank $k$, which is also the rank of the matrix $M$.  
+Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \times k$$ and $$k \times m$$ respectively, and the matrix of singular values $$\Sigma$$ is diagonal and has rank $$k$$, which is also the rank of the matrix $$M$$.  
 
-To compress an image, represented by a matrix $I$, we simply take the SVD of $I$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $\sigma$, then our compressed image
+To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image
 
 $$ compressed image $$
 
