@@ -36,7 +36,9 @@ $$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{j_1, �
 
 Now let’s decompose our system into two parts, represented visually in the figure below.
 
-![Visual schematic of a quantum state with a subdivision](/_img/schmidt_pic.png)
+<img src=“{{site.url}}/_img/schmidt_pic.png”, alt=“Kitten”
+	title=“A cute kitten” width=“150” height=“100” />
+
 
 
 * Schmidt decomposition
