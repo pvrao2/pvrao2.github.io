@@ -7,6 +7,10 @@ description: overview of tensor networks & their application to topological matt
 
 ---
 
+<link rel="stylesheet" href="/path/to/styles/default.css"/>
+<script src="/path/to/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 ## tensor networks & topology
 
 In this post, we will summarize some of the basic ideas behind tensor network methods for simulating quantum matter and touch on some of the connections between these methods and topological
