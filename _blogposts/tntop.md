@@ -13,6 +13,20 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 
 
 * image compression and SVD
+
+
+```python
+def decode(data):
+    result = []
+    for num in data:
+        if num == 0:
+            result.append("H")
+        else:
+            result.append("T")
+    return result
+```
+
+
 * Schmidt decomposition
 * Tensor formalism
 * MPS and relation to SVD
