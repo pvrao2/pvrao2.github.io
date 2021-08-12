@@ -34,11 +34,18 @@ We start by considering an arbitrary quantum state $$\psi$$ which we represent g
 
 $$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{j_1, … , j_N}$$
 
-Now let’s decompose our system into two parts, represented visually in the figure below.
+Now let’s cut our system into two parts $$A = j_1, … , j_n$$ and $$B = j_{n+1}, … , j_N$$, represented visually in the figure below.
 
-![schmidt decomposition](/_img/schmidt_pic.png) {: width=150 height=100 style=“float:right; padding:16px”}
+![schmidt decomposition](/_img/schmidt_pic.png) 
 Format: ![Alt Text]
 
+We can first group the quantum state in terms of pieces to the left and right of the cut:
+
+$$\ket{\psi} = \sum\limits_{A,B} \psi_{AB} \ket{\psi_A} \otimes \ket{\psi_B}$$
+
+This representation allows us to naturally apply an SVD of the matrix $$\psi_{A,B} =  U_A \Lambda V_B^\dagger$$, where $$\lambda_\alpha$$ are the singular values from the matrix $$\Lambda$$ and we define the states $$\ket{\alpha_{A}} =U_A \ket{\psi_A}$$ and $$\bra{\alpha_{B}} = V^\dagger_B \ket{\psi_B}$$. We have now arrived at the _Schmidt decomposition_ of our quantum state:
+
+$$\ket{\psi} = \sum_{\alpha} \lambda_\alpha \ket{\alpha_A} \otimes \ket{\alpha_B}$$ 
 
 
 * Schmidt decomposition
