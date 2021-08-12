@@ -25,6 +25,7 @@ sass:
     sass_dir: _sass
 # Build settings
 markdown: kramdown
+highlighter: rouge
 #theme: minima
 plugins:
   - jekyll-feed
