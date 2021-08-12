@@ -32,7 +32,7 @@ There will turn out to be a useful parallel between the compression of images an
 
 We start by considering an arbitrary quantum state $\psi$ which we represent generically as
 
-$$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{{j_1, … , j_N}$$
+$$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{{j_1, … , j_N}}$$
 
 Now let’s decompose our system into two parts, represented visually in the figure below.
 
