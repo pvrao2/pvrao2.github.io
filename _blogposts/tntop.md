@@ -37,7 +37,7 @@ $$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{{j_1, �
 Now let’s decompose our system into two parts, represented visually in the figure below.
 
 <figure>
-  <img src=“{{site.url}}/_img/schmidt_pic.pdf” alt=“my alt text”/>
+  <img src=“{{site.url}}/_img/schmidt_pic.png” alt=“my alt text”/>
   <figcaption>This is my caption text.</figcaption>
 </figure>
  
