@@ -36,8 +36,8 @@ $$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{j_1, �
 
 Now let’s decompose our system into two parts, represented visually in the figure below.
 
-![schmidt decomposition](/_img/schmidt_pic.png) 
-Format: ![Alt Text](url)
+![schmidt decomposition](/_img/schmidt_pic.png) {: width=150 height=100 style=“float:right; padding:16px”}
+Format: ![Alt Text]
 
 
 
