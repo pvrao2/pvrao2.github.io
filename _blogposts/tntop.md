@@ -15,7 +15,7 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 * image compression and SVD
 
 
-<pre><code>
+<pre><code class="language-python">
 def decode(data):
     result = []
     for num in data:
