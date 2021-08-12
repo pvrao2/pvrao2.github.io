@@ -1,7 +1,7 @@
 ---
 
 layout: blogpost
-title: tensor networks & topology
+title: Tensor networks & topology
 date: August 2, 2021
 description: overview of tensor networks & their application to topological matter
 
@@ -17,7 +17,6 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 * Tensor formalism
 * MPS and relation to SVD
 * DMRG and iDMRG
-* Topology
 
 ### Connection to topological matter
 
