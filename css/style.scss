@@ -539,3 +539,15 @@ a.nav__logo {
     padding: 0 8vw;
   } 
 }
+
+    /* code */
+    &.code,
+    &.rouge-code {
+      padding-left: 1em;
+    }
+  }
+
+  pre {
+    margin: 0;
+  }
+}
