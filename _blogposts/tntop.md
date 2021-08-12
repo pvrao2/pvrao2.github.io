@@ -7,7 +7,7 @@ description: overview of tensor networks & their application to topological matt
 
 ---
 
-##Tensor networks & topology 
+## Tensor networks & topology 
 
 In this post, we will summarize some of the basic ideas behind tensor network methods for simulating quantum matter and touch on some of the applications of these methods to diagnosing and studying topological phases of matter. 
 
@@ -24,6 +24,11 @@ Here $U$ and $V^\dagger$ are both semi-unitary matrices, which are $n \times k$ 
 To compress an image, represented by a matrix $I$, we simply take the SVD of $I$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $\sigma$, then our compressed image
 
 $$ compressed image $$
+
+
+### Schmidt decomposition 
+
+
 
 
 * Schmidt decomposition
