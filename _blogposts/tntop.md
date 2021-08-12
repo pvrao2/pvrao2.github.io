@@ -15,7 +15,7 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 * image compression and SVD
 
 
-<code>
+<pre><code>
 def decode(data):
     result = []
     for num in data:
@@ -24,7 +24,7 @@ def decode(data):
         else:
             result.append("T")
     return result
-</code>
+</code></pre>
 
 
 * Schmidt decomposition
