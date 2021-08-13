@@ -11,9 +11,9 @@ description: overview of tensor networks & their application to topological matt
 
 In this post, we will summarize some of the basic ideas behind tensor network methods for simulating quantum matter and touch on some of the applications of these methods to diagnosing and studying topological phases of matter. 
 
-### Image compression and SVD
+### SVD and image compression
 
-We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both compressing classical images and quantum states of gapped hamiltonians relies on a key principle - the singular value decomposition (SVD).
+We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both tensor network methods and image compression rely fundamentally on the singular value decomposition (SVD).
 
 SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matrices and a diagonal matrix:
  
@@ -23,7 +23,7 @@ Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \time
 
 To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image
 
-$$ compressed image $$
+$$ I_c = \sigma {\bf u_\sigma}  {\bf v_\sigma}^T$$
 
 
 ### Schmidt decomposition 
@@ -37,21 +37,22 @@ $$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{j_1, �
 Now let’s cut our system into two parts $$A = j_1, … , j_n$$ and $$B = j_{n+1}, … , j_N$$, represented visually in the figure below.
 
 ![schmidt decomposition](/_img/schmidt_pic.png) 
-Format: ![Alt Text]
 
 We can first group the quantum state in terms of pieces to the left and right of the cut:
 
 $$\ket{\psi} = \sum\limits_{A,B} \psi_{AB} \ket{\psi_A} \otimes \ket{\psi_B}$$
 
-This representation allows us to naturally apply an SVD of the matrix $$\psi_{A,B} =  U_A \Lambda V_B^\dagger$$, where $$\lambda_\alpha$$ are the singular values from the matrix $$\Lambda$$ and we define the states $$\ket{\alpha_{A}} =U_A \ket{\psi_A}$$ and $$\bra{\alpha_{B}} = V^\dagger_B \ket{\psi_B}$$. We have now arrived at the _Schmidt decomposition_ of our quantum state:
+This representation allows us to naturally apply an SVD of the matrix $$\psi_{A,B} =  U_A \Lambda V_B^\dagger$$, where $$\lambda_\alpha$$ are the singular values from the matrix $$\Lambda$$ and we define the states $$\ket{\alpha_{A}} =U_A \ket{\psi_A}$$ and $$\ket{\alpha_{B}} = V^\dagger_B \ket{\psi_B}$$. We have now arrived at the _Schmidt decomposition_ of our quantum state:
 
 $$\ket{\psi} = \sum_{\alpha} \lambda_\alpha \ket{\alpha_A} \otimes \ket{\alpha_B}$$ 
 
+The singular values are directly related to the entanglement between subsystems $$A$$ and $$B$$.  
 
-* Schmidt decomposition
-* Tensor formalism
-* MPS and relation to SVD
-* DMRG and iDMRG
+Truncation … 
+
+### DMRG and iDMRG
+
+We now jump a little ahead to see a practical application of the entanglement-based truncation of quantum states in action: DMRG. This method was developed by Steve White
 
 ### Connection to topological matter
 
