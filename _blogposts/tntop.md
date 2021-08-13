@@ -21,7 +21,9 @@ SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matri
  
  $$M = U \Sigma V^\dagger$$
 
-Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \times k$$ and $$k \times m$$ respectively, and the matrix of singular values $$\Sigma$$ is diagonal and has rank $$k$$, which is also the rank of the matrix $$M$$.  
+Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \times k$$ and $$k \times m$$ respectively, and the matrix of singular values $$\Sigma$$ is diagonal and has rank $$k$$, which is also the rank of the matrix $$M$$.  We can now introduce a basic “tensor network” diagram for SVD, where each open leg in the diagram represents a free index and connecting edges represent contractions (for a more concrete introduction to the visual notation [see](https://arxiv.org/abs/1805.00055)), 
+
+![SVD tensor diagram](/_img/SVD.png) 
 
 To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. 
 
@@ -70,8 +72,8 @@ The spectrum of the density matrix is referred to as the entanglement spectrum $
 
 We now add some important context to the Schmidt decomposition of quantum states. 
 
-*  For a gapped local Hamiltonian, the ground state obeys an area law with entanglement entropy: scales with the _area_ of cut and not _volume._
-* In terms of the Schmidt decomposition, we see that an area law state will have decreasing Schmidt values rather than constant ones 
+*  For a gapped local Hamiltonian in 1D, the ground state obeys an area law with entanglement entropy: scales with the _area_ of cut and not _volume._
+* In terms of the Schmidt decomposition, we see that an area law state will have decreasing Schmidt values rather than constant ones.
 
 ![area law](/_img/arealaw.png) 
 
@@ -80,6 +82,8 @@ As we see in the figure above from the [review paper](https://arxiv.org/abs/1805
 This brings to mind the example of image compression where the first few singular values contained most of the important information, and we were able to truncate our image. In this case, we can imagine truncating the quantum state to keep only $$\chi$$ Schmidt values:
 
 $$|| \psi - \sum\limits_\alpha^\chi \lambda_\alpha \ket{\alpha_A} \otimes \ket{\alpha_B}|| < \epsilon$$ 
+
+For an area law state, for all $$\epsilon > 0$$, we can achieve the relation above for a finite $$\chi$$, where above the norm is the Frobenius norm. Though the area law states are only rigourosly linked (see [here](https://arxiv.org/pdf/1301.1162.pdf) and [here](https://arxiv.org/abs/0705.2024)) to ground states of gapped local Hamiltonians in 1D, if we are able to map a pseudo 2D problem to a 1D problem, the same considerations will apply. 
 
 ### DMRG and iDMRG
 
