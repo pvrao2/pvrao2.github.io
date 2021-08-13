@@ -25,7 +25,7 @@ Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \time
 
 ![SVD tensor diagram](/_img/SVD.png) 
 
-To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. 
+To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep the first singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. 
 
 The more singular values we keep, the better an approximation to the original image we get. In the picture above, fifty singular values were kept in the compressed image. We can plot the singular values and see why compression is a reasonable thing to do:
 
@@ -84,6 +84,12 @@ This brings to mind the example of image compression where the first few singula
 $$|| \psi - \sum\limits_\alpha^\chi \lambda_\alpha \ket{\alpha_A} \otimes \ket{\alpha_B}|| < \epsilon$$ 
 
 For an area law state, for all $$\epsilon > 0$$, we can achieve the relation above for a finite $$\chi$$, where above the norm is the Frobenius norm. Though the area law states are only rigourosly linked (see [here](https://arxiv.org/pdf/1301.1162.pdf) and [here](https://arxiv.org/abs/0705.2024)) to ground states of gapped local Hamiltonians in 1D, if we are able to map a pseudo 2D problem to a 1D problem, the same considerations will apply. 
+
+The density matrix renormalization group (DMRG)  [developed by](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.69.2863)  Steve White was originally developed with this in mind, successively truncating the quantum state based on the entanglement spectrum (Schmidt values) of the density matrix. We will consider a compatible formulation based on matrix product states. 
+
+### Matrix product states (MPS)
+
+
 
 ### DMRG and iDMRG
 
