@@ -13,6 +13,8 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 
 ### SVD and image compression
 
+![image compression](/_img/image_compression.png) 
+
 We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both tensor network methods and image compression rely fundamentally on the singular value decomposition (SVD).
 
 SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matrices and a diagonal matrix:
@@ -21,10 +23,7 @@ SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matri
 
 Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \times k$$ and $$k \times m$$ respectively, and the matrix of singular values $$\Sigma$$ is diagonal and has rank $$k$$, which is also the rank of the matrix $$M$$.  
 
-To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image
-
-$$ I_c = \sigma {\bf u_\sigma}  {\bf v_\sigma}^T$$
-
+To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. 
 
 ### Schmidt decomposition 
 
@@ -34,7 +33,9 @@ We start by considering an arbitrary quantum state $$\psi$$ which we represent g
 
 $$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{j_1, … , j_N}$$
 
-Now let’s cut our system into two parts $$A = j_1, … , j_n$$ and $$B = j_{n+1}, … , j_N$$, represented visually in the figure below.
+Each $$j$$ represents a subsystem of the overall wavefunction, for example $$j \in \lbrace 0, 1\rbrace$$ could represent a single qubit. 
+
+We can imagine cutting our overall system into two parts by grouping the subsystems together $$A = j_1, … , j_n$$ and $$B = j_{n+1}, … , j_N$$, represented visually in the figure below.
 
 ![schmidt decomposition](/_img/schmidt_pic.png) 
 
@@ -53,6 +54,10 @@ Truncation …
 ### DMRG and iDMRG
 
 We now jump a little ahead to see a practical application of the entanglement-based truncation of quantum states in action: DMRG. This method was developed by Steve White
+
+* DMRG from truncation of density matrix
+* DMRG algorith and maybe examples
+* Advantage of iDMRG for some systems
 
 ### Connection to topological matter
 
