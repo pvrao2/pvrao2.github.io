@@ -66,6 +66,15 @@ $$S = -\Tr(\rho^A \log \rho^A) = \sum_\alpha \lambda_\alpha^2 \log \lambda_\alph
 
 The spectrum of the density matrix is referred to as the entanglement spectrum $$\lbrace \epsilon_\alpha \rbrace$$, which we will revisit.
 
+### Entanglement: area versus volume laws
+
+We now add some important context to the Schmidt decomposition of quantum states. 
+
+*  For a gapped local Hamiltonian, the ground state obeys an area law with entanglement entropy: scales with the _area_ of cut and not _volume._
+* In terms of the Schmidt decomposition, we see that an area law state will have decreasing Schmidt values rather than constant ones 
+
+
+
 ### DMRG and iDMRG
 
 We now jump a little ahead to see a practical application of the entanglement-based truncation of quantum states in action: DMRG. This method was developed by Steve White
