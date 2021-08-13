@@ -73,6 +73,8 @@ We now add some important context to the Schmidt decomposition of quantum states
 *  For a gapped local Hamiltonian, the ground state obeys an area law with entanglement entropy: scales with the _area_ of cut and not _volume._
 * In terms of the Schmidt decomposition, we see that an area law state will have decreasing Schmidt values rather than constant ones 
 
+![area law](/_img/arealaw.png) 
+
 
 
 ### DMRG and iDMRG
