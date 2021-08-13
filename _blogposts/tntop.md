@@ -61,6 +61,7 @@ The singular values are directly related to the entanglement between subsystems 
 $$\rho_A = \Tr_B \ket{\psi}\bra{\psi} = \sum_\alpha \lambda^2_\alpha \ket{\alpha_A} \bra{\alpha_A}$$
 
 We can now see that the entanglement entropy is directly related to the singular values as 
+
 $$S = -\Tr(\rho^A \log \rho^A) = \sum_\alpha \lambda_\alpha^2 \log \lambda_\alpha^2$$. 
 
 The spectrum of the density matrix is referred to as the entanglement spectrum $$\lbrace \epsilon_\alpha \rbrace$$, which we will revisit.
