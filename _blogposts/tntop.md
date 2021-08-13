@@ -23,7 +23,28 @@ SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matri
 
 Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \times k$$ and $$k \times m$$ respectively, and the matrix of singular values $$\Sigma$$ is diagonal and has rank $$k$$, which is also the rank of the matrix $$M$$.  
 
-To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. 
+To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. In code, 
+
+```python
+
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
+from urllib.request import urlopen
+
+with urlopen(url, context=ssl._create_unverified_context()) as file:
+    img_full = mpimg.imread(file)[:, :, 0]
+
+% number of singular values we would like to keep
+chi = 1;
+
+U, s, V = np.linalg.svd(img_full)
+img_cmprs = np.dot(U[:, :chi] * s[:chi], V[:chi, :])
+
+```
+
+
+
 
 
 
