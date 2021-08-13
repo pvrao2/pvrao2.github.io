@@ -36,9 +36,7 @@ $$ \ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N}  \ket{j_1, �
 
 Now let’s cut our system into two parts $$A = j_1, … , j_n$$ and $$B = j_{n+1}, … , j_N$$, represented visually in the figure below.
 
-<p>
- <img src="{{site.url}}/_img/schmidt_pic.png" style="display: block; margin: auto;" width=75%; height=auto;/>
-</p>
+![schmidt decomposition](/_img/schmidt_pic.png) 
 
 We can first group the quantum state in terms of pieces to the left and right of the cut:
 
