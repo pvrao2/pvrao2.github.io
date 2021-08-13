@@ -64,7 +64,7 @@ We can now see that the entanglement entropy is directly related to the singular
 
 $$S = -\Tr(\rho^A \log \rho^A) = \sum_\alpha \lambda_\alpha^2 \log \lambda_\alpha^2$$
 
-The spectrum of the density matrix is referred to as the entanglement spectrum $$\lbrace \epsilon_\alpha \rbrace$$, which we will revisit.
+The spectrum of the density matrix is referred to as the entanglement spectrum $$\lbrace \epsilon_\alpha \rbrace$$, which we will revisit. 
 
 ### Entanglement: area versus volume laws
 
@@ -75,7 +75,11 @@ We now add some important context to the Schmidt decomposition of quantum states
 
 ![area law](/_img/arealaw.png) 
 
+As we see in the figure above from the [review paper](https://arxiv.org/abs/1805.00055) by Hauschild and Pollmann, we can think of the area law states as a special corner of the overall Hilbert space. The figure on the right compares the Schmidt values of the ground state of the transverse field Ising model versus a random state for $$N=16$$ spins - we can see that for this gapped ground state, the Schmidt values decay rapidly.
 
+This brings to mind the example of image compression where the first few singular values contained most of the important information, and we were able to truncate our image. In this case, we can imagine truncating the quantum state to keep only $$\chi$$ Schmidt values:
+
+$$|| \psi - \sum\limits_\alpha^\chi \lambda_\alpha \ket{\alpha_A} \otimes \ket{\alpha_B}|| < \epsilon$$ 
 
 ### DMRG and iDMRG
 
