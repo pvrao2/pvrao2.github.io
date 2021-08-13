@@ -23,27 +23,13 @@ SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matri
 
 Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \times k$$ and $$k \times m$$ respectively, and the matrix of singular values $$\Sigma$$ is diagonal and has rank $$k$$, which is also the rank of the matrix $$M$$.  
 
-To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. In code, 
+To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep one singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. 
 
-```python
+The more singular values we keep, the better an approximation to the original image we get. In the picture above, fifty singular values were kept in the compressed image. We can plot the singular values and see why compression is a reasonable thing to do:
 
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import numpy as np
-from urllib.request import urlopen
+![singular values](/_img/singular_values_img.png) 
 
-with urlopen(url, context=ssl._create_unverified_context()) as file:
-    img_full = mpimg.imread(file)[:, :, 0]
-
-% number of singular values we would like to keep
-chi = 1;
-
-U, s, V = np.linalg.svd(img_full)
-img_cmprs = np.dot(U[:, :chi] * s[:chi], V[:chi, :])
-
-```
-
-
+The singular values (squared) are plotted in a semi-log plot, and there is a huge drop off between the first few singular values and the rest. It turns out this is related to the entanglement in the image
 
 
 
