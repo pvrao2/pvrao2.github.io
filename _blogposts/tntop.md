@@ -27,16 +27,16 @@ To compress an image, represented by a matrix $$I$$, we simply take the SVD of $
 
 The more singular values we keep, the better an approximation to the original image we get. In the picture above, fifty singular values were kept in the compressed image. We can plot the singular values and see why compression is a reasonable thing to do:
 
-![singular values](/_img/singular_values_img.png) 
+![singular-values](/_img/singular_values_img.png) 
 
-The singular values (squared) are plotted in a semi-log plot, and there is a huge drop off between the first few singular values and the rest. It turns out this is related to the entanglement in the image
+The singular values (squared) are plotted in a semi-log plot, and there is a huge drop off between the first few singular values and the rest. 
 
-
+A remark: what we’re doing is also intimately related to dimensionality reduction and [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis), where SVD is used to compress a data set.
 
 
 ### Schmidt decomposition 
 
-There will turn out to be a useful parallel between the compression of images and the compression of _quantum states_ that relies on the singular value decomposition, and more deeply, on entanglement. We first need to introduce a concept called the Schmidt decomposition of a quantum state. 
+There is a useful parallel between the compression of images and the compression of _quantum states_ that relies on the singular value decomposition, and more deeply, on entanglement. We first need to introduce a concept called the Schmidt decomposition of a quantum state. 
 
 We start by considering an arbitrary quantum state $$\psi$$ which we represent generically as
 
@@ -56,9 +56,9 @@ This representation allows us to naturally apply an SVD of the matrix $$\psi_{A,
 
 $$\ket{\psi} = \sum_{\alpha} \lambda_\alpha \ket{\alpha_A} \otimes \ket{\alpha_B}$$ 
 
-The singular values are directly related to the entanglement between subsystems $$A$$ and $$B$$.  
+The singular values are directly related to the entanglement between subsystems $$A$$ and $$B$$, and we can see this by considering the reduced density matrix for either subsystem (let’s take $$A$$ for example)
 
-Truncation … 
+$$\rho_A = \Tr_B \ket{\psi}\bra{\psi}$$
 
 ### DMRG and iDMRG
 
