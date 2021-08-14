@@ -85,11 +85,15 @@ $$|| \psi - \sum\limits_\alpha^\chi \lambda_\alpha \ket{\alpha_A} \otimes \ket{\
 
 For an area law state, for all $$\epsilon > 0$$, we can achieve the relation above for a finite $$\chi$$, where above the norm is the Frobenius norm. Though the area law states are only rigourosly linked (see [here](https://arxiv.org/pdf/1301.1162.pdf) and [here](https://arxiv.org/abs/0705.2024)) to ground states of gapped local Hamiltonians in 1D, if we are able to map a pseudo 2D problem to a 1D problem, the same considerations will apply. 
 
-The density matrix renormalization group (DMRG)  [developed by](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.69.2863)  Steve White was originally developed with this in mind, successively truncating the quantum state based on the entanglement spectrum (Schmidt values) of the density matrix. We will consider a compatible formulation based on matrix product states. 
+The density matrix renormalization group (DMRG)  [developed by](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.69.2863)  Steve White was originally developed with this in mind, successively truncating the quantum state based on the entanglement spectrum (Schmidt values) of the density matrix. We will consider a compatible formulation that came later based on matrix product states. 
 
 ### Matrix product states (MPS)
 
+A matrix product state $\ket{\psi}$ is one that can be written as 
 
+$$\ket{\psi} = \sum\limits_{j_1, … , j_N} \sum\limits_{\alpha_1, … , \alpha_N} M^{[1] j_1}_{\alpha_1 \alpha_2} M^{[2] j_2}_{\alpha_2 \alpha_3} … M^{[N] j_N}_{\alpha_N \alpha_{N+1}} \ket{j_1, … , j_N}$$
+
+Each matrix $$M^{[i] j_i}$$ is an $$\chi_i \times \chi_{i+1}$$ dimensional matrix (which represent the dimension of the lower indicies $$\alpha_i$$). There’s an inherent ambiguity in the definition of MPS, as we can always insert an invertible matrix between any of the two matrices and recoup the same overall state. It turns out that there is a _canonical form_ of MPS that will allow us to make contact with the Schmidt decomposition of quantum states seen earlier. 
 
 ### DMRG and iDMRG
 
