@@ -99,7 +99,7 @@ Each matrix $$M^{[i] j_i}$$ is an $$\chi_i \times \chi_{i+1}$$ dimensional matri
 
 We have performed an SVD here on the matrix $$\psi_{j_1, \tilde{j}}$$ and the result is the left matrix $$L_1$$, the matrix of singular values $$\Sigma_1$$, and the right matrix $$\psi^1_R$$.  If we continue this process, we can decompose the entire state into contracted matrices $$L_i$$ as below.
 
-![left canonical form](/_img/leftcanonicalformpng) 
+![left canonical form](/_img/leftcanonicalform.png) 
 
 
 ### DMRG and iDMRG
