@@ -97,10 +97,13 @@ Each matrix $$M^{[i] j_i}$$ is an $$\chi_i \times \chi_{i+1}$$ dimensional matri
 
 ![canonical form](/_img/canonicalform1.png) 
 
-We have performed an SVD here on the matrix $$\psi_{j_1, \tilde{j}}$$ and the result is the left matrix $$L_1$$, the matrix of singular values $$\Sigma_1$$, and the right matrix $$\psi^1_R$$.  If we continue this process, we can decompose the entire state into contracted matrices $$L_i$$ as below.
+We have performed an SVD here on the matrix $$\psi_{j_1, \tilde{j}}$$ and the result is the left matrix $$L_1$$, the matrix of singular values $$\Sigma_1$$, and the right matrix $$\psi^1_R$$.  In the language of the Schmidt decomposition, the matrix $$L_1$$ corresponds to the left Schmidt state and $$\Sigma_1$$ gives us the Schmidt values parameterizing the entanglement between $$j_1$$ and the rest of the system. 
+
+If we continue this process, we can decompose the entire state into contracted matrices $$L_i$$ as below.
 
 ![left canonical form](/_img/leftcanonicalform.png) 
 
+The above form is referred to as “left canonical form” — if we started chain of SVD from the right, we could alternatively reach the “right canonical form”, and working from both ends and keeping at least one matrix of singular values around would yield a “mixed canonical form”. 
 
 ### DMRG and iDMRG
 
