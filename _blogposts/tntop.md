@@ -14,7 +14,7 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 ### SVD and image compression
 
 <p align="center">
- <img src="../_img/image_compression.png" alt="image compression" width="400"/>
+ <img src="assets/_img/image_compression.png" alt="image compression" width="400"/>
 </p>
 
 We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both tensor network methods and image compression rely fundamentally on the singular value decomposition (SVD).
