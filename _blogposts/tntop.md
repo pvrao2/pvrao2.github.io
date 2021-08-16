@@ -105,7 +105,11 @@ A matrix product state $$\ket{\psi}$$ is one that can be written as
 
 $$\ket{\psi} = \sum\limits_{j_1, … , j_N} \sum\limits_{\alpha_1, … , \alpha_N} M^{[1] j_1}_{\alpha_1 \alpha_2} M^{[2] j_2}_{\alpha_2 \alpha_3} … M^{[N] j_N}_{\alpha_N \alpha_{N+1}} \ket{j_1, … , j_N}$$
 
-Each matrix $$M^{[i] j_i}$$ is an $$\chi_i \times \chi_{i+1}$$ dimensional matrix (which represent the dimension of the lower indices $$\alpha_i$$). There’s an inherent ambiguity in the definition of MPS, as we can always insert an invertible matrix between any of the two matrices and recoup the same overall state. It turns out that there is a _canonical form_ of MPS that will allow us to make contact with the Schmidt decomposition of quantum states seen earlier.  We can introduce the canonical form by a state $$\ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N} \ket{j_1, … , j_N}$$ into an MPS in a specific way, starting by considering the tensor $$\psi_{j_1,…,j_N}$$ as a matrix with indices $$j_1$$ and the composite index $$\tilde{j} = j_2, … , j_N$$.
+Each matrix $$M^{[i] j_i}$$ is an $$\chi_i \times \chi_{i+1}$$ dimensional matrix (which represent the dimension of the lower indices $$\alpha_i$$). There’s an inherent ambiguity in the definition of MPS, as we can always insert an invertible matrix between any of the two matrices and recoup the same overall state. It turns out that there is a _canonical form_ of MPS that will allow us to make contact with the Schmidt decomposition of quantum states seen earlier.  We can introduce the canonical form by a state 
+
+$$\ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N} \ket{j_1, … , j_N}$$ 
+
+into an MPS in a specific way, starting by considering the tensor $$\psi_{j_1,…,j_N}$$ as a matrix with indices $$j_1$$ and the composite index $${\bf j} = j_2, … , j_N$$.
 
 <p align="center">
  <img src="{{site.url}}/_img/canonicalform1.png" alt="area law" width="550" height="auto"/>
