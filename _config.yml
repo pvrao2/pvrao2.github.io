@@ -43,8 +43,8 @@ usemathjax: true
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-#include:
- # - "_img"
+include:
+  - "_img"
 
 collections:
   - recipes
