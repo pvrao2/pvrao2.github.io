@@ -116,7 +116,7 @@ We have performed an SVD here on the matrix $$\psi_{j_1, \tilde{j}}$$ and the re
 If we continue this process, we can decompose the entire state into contracted matrices $$L_i$$ as below.
 
 <p align="center">
- <img src="{{site.url}}/_img/lefcanonicalform.png" alt="left canonical form" width="400"/>
+ <img src="{{site.url}}/_img/leftcanonicalform.png" alt="left canonical form" width="400"/>
 </p> 
 
 The above form is referred to as “left canonical form” — if we started chain of SVD from the right, we could alternatively reach the “right canonical form”, and working from both ends and keeping at least one matrix of singular values around would yield a “mixed canonical form”. 
