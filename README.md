@@ -5,4 +5,5 @@
 
 Credit to [Dave Lim](https://dlimiter.net) ([Source](https://github.com/dlimiter/dlimiter.github.io)) for the original website design. 
 
-<img src="{{site.url}}/_img/SVD.png" alt="" style="height: 100px; width:100px;"/>
+<div>
+<img src="{{site.url}}/_img/SVD.png" alt="" style="height: 100px; width:100px;"/></div>
