@@ -13,7 +13,9 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 
 ### SVD and image compression
 
-![image compression](/_img/image_compression.png) 
+<p align="center">
+ <img src="_img/image_compression.png" alt="image compression" width="400"/>
+</p>
 
 We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both tensor network methods and image compression rely fundamentally on the singular value decomposition (SVD).
 
@@ -23,13 +25,18 @@ SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matri
 
 Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \times k$$ and $$k \times m$$ respectively, and the matrix of non-zero singular values $$\Sigma$$ is diagonal and has rank $$k$$, which is also the rank of the matrix $$M$$.  We can now introduce a basic “tensor network” diagram for SVD, where each open leg in the diagram represents a free index and connecting edges represent contractions (for a more concrete introduction to the visual notation [see](https://arxiv.org/abs/1805.00055)), 
 
-![SVD tensor diagram](/_img/SVD.png) 
+
+<p align="center">
+ <img src="_img/SVD.png" alt="SVD" width="400"/>
+</p> 
 
 To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep the first singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. 
 
 The more singular values we keep, the better an approximation to the original image we get. In the picture above, fifty singular values were kept in the compressed image. We can plot the singular values and see why compression is a reasonable thing to do:
 
-![singular-values](/_img/singular_values_img.png) 
+<p align="center">
+ <img src="_img/singular_values_img.png" alt="singular values" width="400"/>
+</p> 
 
 The singular values (squared) are plotted in a semi-log plot, and there is a huge drop off between the first few singular values and the rest. 
 
@@ -48,7 +55,10 @@ Each $$j$$ represents a subsystem of the overall wavefunction, for example $$j \
 
 We can imagine cutting our overall system into two parts by grouping the subsystems together $$A = j_1, … , j_n$$ and $$B = j_{n+1}, … , j_N$$, represented visually in the figure below.
 
-![schmidt decomposition](/_img/schmidt_pic.png) 
+
+<p align="center">
+ <img src="_img/schmidt_pic.png" alt="schmidt picture" width="400"/>
+</p> 
 
 We can first group the quantum state in terms of pieces to the left and right of the cut:
 
@@ -75,7 +85,9 @@ We now add some important context to the Schmidt decomposition of quantum states
 *  For a gapped local Hamiltonian in 1D, the ground state obeys an area law with entanglement entropy: scales with the _area_ of cut and not _volume._
 * In terms of the Schmidt decomposition, we see that an area law state will have decreasing Schmidt values rather than constant ones.
 
-![area law](/_img/arealaw.png) 
+<p align="center">
+ <img src="_img/arealaw.png" alt="area law" width="400"/>
+</p> 
 
 As we see in the figure above from the [review paper](https://arxiv.org/abs/1805.00055) by Hauschild and Pollmann, we can think of the area law states as a special corner of the overall Hilbert space. The figure on the right compares the Schmidt values of the ground state of the transverse field Ising model versus a random state for $$N=16$$ spins - we can see that for this gapped ground state, the Schmidt values decay rapidly.
 
@@ -95,13 +107,17 @@ $$\ket{\psi} = \sum\limits_{j_1, … , j_N} \sum\limits_{\alpha_1, … , \alpha_
 
 Each matrix $$M^{[i] j_i}$$ is an $$\chi_i \times \chi_{i+1}$$ dimensional matrix (which represent the dimension of the lower indices $$\alpha_i$$). There’s an inherent ambiguity in the definition of MPS, as we can always insert an invertible matrix between any of the two matrices and recoup the same overall state. It turns out that there is a _canonical form_ of MPS that will allow us to make contact with the Schmidt decomposition of quantum states seen earlier.  We can introduce the canonical form by a state $$\ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N} \ket{j_1, … , j_N}$$ into an MPS in a specific way, starting by considering the tensor $$\psi_{j_1,…,j_N}$$ as a matrix with indices $$j_1$$ and the composite index $$\tilde{j} = j_2, … , j_N$$.
 
-![canonical form](/_img/canonicalform1.png) 
+<p align="center">
+ <img src="_img/canonicalform1.png" alt="area law" width="400"/>
+</p> 
 
 We have performed an SVD here on the matrix $$\psi_{j_1, \tilde{j}}$$ and the result is the left matrix $$L_1$$, the matrix of singular values $$\Sigma_1$$, and the right matrix $$\psi^1_R$$.  In the language of the Schmidt decomposition, the matrix $$L_1$$ corresponds to the left Schmidt state and $$\Sigma_1$$ gives us the Schmidt values parameterizing the entanglement between $$j_1$$ and the rest of the system. 
 
 If we continue this process, we can decompose the entire state into contracted matrices $$L_i$$ as below.
 
-![left canonical form](/_img/leftcanonicalform.png) 
+<p align="center">
+ <img src="_img/lefcanonicalform.png" alt="left canonical form" width="400"/>
+</p> 
 
 The above form is referred to as “left canonical form” — if we started chain of SVD from the right, we could alternatively reach the “right canonical form”, and working from both ends and keeping at least one matrix of singular values around would yield a “mixed canonical form”. 
 
