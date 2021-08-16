@@ -14,7 +14,7 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 ### SVD and image compression
 
 <p align="center">
- <img src="_img/image_compression.png" alt="image compression" width="400"/>
+ <img src="../_img/image_compression.png" alt="image compression" width="400"/>
 </p>
 
 We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both tensor network methods and image compression rely fundamentally on the singular value decomposition (SVD).
@@ -27,7 +27,7 @@ Here $$U$$ and $$V^\dagger$$ are both semi-unitary matrices, which are $$n \time
 
 
 <p align="center">
- <img src="_img/SVD.png" alt="SVD" width="400"/>
+ <img src="../_img/SVD.png" alt="SVD" width="400"/>
 </p> 
 
 To compress an image, represented by a matrix $$I$$, we simply take the SVD of $$I$$ and decide how many singular values we’d like to keep around to represent the image. If we keep the first singular value, for example let’s call it $$\sigma$$, then our compressed image can be constructed by multiplying $$\sigma$$ with the product of the first column of $$U$$ and the first row of $$V^\dagger$$. 
@@ -35,7 +35,7 @@ To compress an image, represented by a matrix $$I$$, we simply take the SVD of $
 The more singular values we keep, the better an approximation to the original image we get. In the picture above, fifty singular values were kept in the compressed image. We can plot the singular values and see why compression is a reasonable thing to do:
 
 <p align="center">
- <img src="_img/singular_values_img.png" alt="singular values" width="400"/>
+ <img src="../_img/singular_values_img.png" alt="singular values" width="400"/>
 </p> 
 
 The singular values (squared) are plotted in a semi-log plot, and there is a huge drop off between the first few singular values and the rest. 
