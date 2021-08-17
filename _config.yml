@@ -59,7 +59,7 @@ permalink: /:title/
 defaults:
 
   - scope:
-      path: "{{site.url}}/_blogposts/published"
+      path: ""
       type: "blogposts"
     values:
       layout: "blogpost"
