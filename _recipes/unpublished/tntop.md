@@ -119,9 +119,9 @@ We have performed an SVD here on the matrix $$\psi_{j_1, (j_2, … , j_N)}$$ and
 
 $$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1} U_{j_1, \alpha_1} \Sigma_{\alpha_1, \alpha_1} (V^\dagger)_{\alpha_1, \bf{j}} \equiv \sum\limits_{\alpha_1}^{\chi_1} U_{j_1,\alpha_1} \psi_{\alpha_1, j_2, … , j_N)}$$
 
-The result is the familiar $$U, V^\dagger$$ and $$\Sigma$$ matrices where the latter contains the non-zero singular values (there are $$\chi_1$$ of them). It is more convenient to view  the $$U$$ matrix here as a collection of $$d$$ row vectors with entries $$A^{j_1}_{\alpha_1} = U_{j_1,\alpha_1}$$. Continuing on, we can again reshape the object $$\psi_{\alpha_1, j_2, … , j_N)} \rightarrow \psi_{(\alpha_1 j_2), (j_3, … , j_N)$$ and perform an SVD:
+The result is the familiar $$U, V^\dagger$$ and $$\Sigma$$ matrices where the latter contains the non-zero singular values (there are $$\chi_1$$ of them). It is more convenient to view  the $$U$$ matrix here as a collection of $$d$$ row vectors with entries $$A^{j_1}_{\alpha_1} = U_{j_1,\alpha_1}$$. Continuing on, we can again reshape the object $$\psi_{\alpha_1, j_2, … , j_N} \rightarrow \psi_{(\alpha_1 j_2), (j_3, … , j_N)$$ and perform an SVD:
 
-$$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} U_{(a_1 j_2), (j_3, … , j_N) \Sigma_{\alpha_2, \alpha_2} (V^\dagger)_{a_2, (j_3, …, j_N)= \sum_\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} A^{j_2}_{\alpha_1, \alpha_2} \psi_{(a_2, j_3),(j_4, … , j_N)}$$. 
+$$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} U_{(a_1 j_2), (j_3, … , j_N)} \Sigma_{\alpha_2, \alpha_2} (V^\dagger)_{a_2, (j_3, …, j_N)}= \sum_\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} A^{j_2}_{\alpha_1, \alpha_2} \psi_{(a_2, j_3),(j_4, … , j_N)}$$. 
 
 We can continue this process to build the state entirely out of $$A^{j_n}_{\alpha_{n-1},\alpha_n}$$ type objects and graphically this looks like 
 
