@@ -105,17 +105,23 @@ A matrix product state $$\ket{\psi}$$ is one that can be written as
 
 $$\ket{\psi} = \sum\limits_{j_1, … , j_N} \sum\limits_{\alpha_1, … , \alpha_N} M^{[1] j_1}_{\alpha_1 \alpha_2} M^{[2] j_2}_{\alpha_2 \alpha_3} … M^{[N] j_N}_{\alpha_N \alpha_{N+1}} \ket{j_1, … , j_N}$$
 
-Each matrix $$M^{[i] j_i}$$ is an $$\chi_i \times \chi_{i+1}$$ dimensional matrix (which represent the dimension of the lower indices $$\alpha_i$$). There’s an inherent ambiguity in the definition of MPS, as we can always insert an invertible matrix between any of the two matrices and recoup the same overall state. It turns out that there is a _canonical form_ of MPS that will allow us to make contact with the Schmidt decomposition of quantum states seen earlier.  We can introduce the canonical form by a state 
+Each matrix $$M^{[i] j_i}$$ is an $$\chi_i \times \chi_{i+1}$$ dimensional matrix (which represent the dimension of the lower indices $$\alpha_i$$). There’s an inherent ambiguity in the definition of MPS, as we can always insert an invertible matrix between any of the two matrices and recoup the same overall state. It turns out that there is a _canonical form_ of MPS that will allow us to make contact with the Schmidt decomposition of quantum states seen earlier.  Let’s introduce this canonical form by considering a generic state on a lattice of $$N$$ sites, with degrees of freedom $$j_i$$ (each of dimension $$d$$) on each site, this reads:
 
 $$\ket{\psi} = \sum\limits_{j_1, … , j_N} \psi_{j_1, … , j_N} \ket{j_1, … , j_N}$$ 
 
-into an MPS in a specific way, starting by considering the tensor $$\psi_{j_1,…,j_N}$$ as a matrix with indices $$j_1$$ and the composite index $${\bf j} = j_2, … , j_N$$.
+into an MPS in a specific way, starting by considering the tensor $$\psi_{j_1,…,j_N}$$ as a matrix with indices $$j_1$$ and the composite index $$(j_2, … , j_N)$$, 
 
 <p align="center">
- <img src="{{site.url}}/_img/canonicalform1.png" alt="area law" width="550" height="auto"/>
+ <img src="{{site.url}}/_img/canonicalform1.png" alt="" width="550" height="auto"/>
 </p> 
 
-We have performed an SVD here on the matrix $$\psi_{j_1, {\bf j}}$$ and the result is the left matrix $$L_1$$, the matrix of singular values $$\Sigma_1$$, and the right matrix $$\psi^1_R$$.  In the language of the Schmidt decomposition, the matrix $$L_1$$ corresponds to the left Schmidt state and $$\Sigma_1$$ gives us the Schmidt values parameterizing the entanglement between $$j_1$$ and the rest of the system.  If we continue this process, we can decompose the entire state into contracted matrices $$L_i$$ as below.
+We have performed an SVD here on the matrix $$\psi_{j_1, (j_2, … , j_N)}$$ and find:
+
+$$\psi_{j_1, … , j_N} = \sum\limits_\alpha_1^\chi_1 U_{j_1, \alpha_1} \Sigma_{\alpha_1, \alpha_1} (V^\dagger)_{\alpha_1, \bf{j}} \equiv \sum\limits_\alpha_1^\chi_1 U_{j_1,\alpha_1} \psi_{\alpha_1, j_2, … , j_N)}$
+
+The result is the familiar $$U, V^\dagger$$ and $$\Sigma$$ matrices where the latter contains the non-zero singular values (there are $$\chi_1$$ of them). It is more convenient to view  the $$U$$ matrix here as a collection of $$d$$ row vectors with entries $$A^{j_1}_{\alpha_1} = U_{j_1,\alpha_1}$$. Continuing on, we can again reshape the object $$\psi_{\alpha_1, j_2, … , j_N)} \rightarrow \psi_{(\alpha_1 j_2), (j_3, … , j_N)$$ and perform an SVD:
+
+$$\psi_{j_1, … , j_N} = \sum_\limits{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} U_{(a_1 j_2), (j_3, … , j_N) \Sigma_{\alpha_2, \alpha_2} (V^\dagger)_{a_2, (j_3, …, j_N)= \sum_\limits{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} A^{j_2}_{\alpha_1, \alpha_2} \psi_{(a_2, j_3),(j_4, … , j_N)}$$
 
 <p align="center">
  <img src="/_img/leftcanonicalform.png" alt="left canonical form" width="400" height="auto"/>
@@ -124,8 +130,6 @@ We have performed an SVD here on the matrix $$\psi_{j_1, {\bf j}}$$ and the resu
 The above form is referred to as “left canonical form” — if we started chain of SVD from the right, we could alternatively reach the “right canonical form”, and working from both ends and keeping at least one matrix of singular values around would yield a “mixed canonical form”. 
 
 ### DMRG and iDMRG
-
-We now jump a little ahead to see a practical application of the entanglement-based truncation of quantum states in action: DMRG. This method was developed by Steve White
 
 * DMRG from truncation of density matrix
 * DMRG algorithm and maybe examples
