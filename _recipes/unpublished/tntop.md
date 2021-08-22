@@ -1,13 +1,13 @@
 ---
 
 layout: blogpost
-title: Tensor networks & topology
+title: Tensor networks & topology (1/2)
 date: August 2, 2021
 description: overview of tensor networks & their application to topological matter
 
 ---
 
-## Tensor networks & topology 
+## Tensor networks & topology (1/2)
 
 In this post, we will summarize some of the basic ideas behind tensor network methods for simulating quantum matter and touch on some of the applications of these methods to diagnosing and studying topological phases of matter. 
 
@@ -17,9 +17,7 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 <img src="{{site.url}}/_img/image_compression.png" alt="image compression" width="500" height="auto"/>
 </p>
 
-We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both tensor network methods and image compression rely fundamentally on the singular value decomposition (SVD).
-
-SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matrices and a diagonal matrix:
+We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both tensor network methods and image compression rely fundamentally on the singular value decomposition (SVD). SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matrices and a diagonal matrix:
  
  $$M = U \Sigma V^\dagger$$
 
@@ -117,13 +115,13 @@ into an MPS in a specific way, starting by considering the tensor $$\psi_{j_1,�
 
 We have performed an SVD here on the matrix $$\psi_{j_1, (j_2, … , j_N)}$$ and find:
 
-$$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1} U_{j_1, \alpha_1} \Sigma_{\alpha_1, \alpha_1} (V^\dagger)_{\alpha_1, \bf{j}} \equiv \sum\limits_{\alpha_1}^{\chi_1} U_{j_1,\alpha_1} \psi_{\alpha_1, j_2, … , j_N)}$$
+$$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1} U_{j_1, \alpha_1} \Sigma_{\alpha_1, \alpha_1} (V^\dagger)_{\alpha_1, (j_2,    … , j_N)} \equiv \sum\limits_{\alpha_1}^{\chi_1} U_{j_1,\alpha_1} \psi_{\alpha_1, j_2, … , j_N}$$
 
 The result is the familiar $$U, V^\dagger$$ and $$\Sigma$$ matrices where the latter contains the non-zero singular values (there are $$\chi_1$$ of them). It is more convenient to view  the $$U$$ matrix here as a collection of $$d$$ row vectors with entries $$A^{j_1}_{\alpha_1} = U_{j_1,\alpha_1}$$. Continuing on, we can again reshape the object $$\psi_{\alpha_1, j_2, … , j_N} \rightarrow \psi_{(\alpha_1 j_2), (j_3, … , j_N)}$$ and perform an SVD:
 
-$$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} U_{(a_1 j_2), (j_3, … , j_N)} \Sigma_{\alpha_2, \alpha_2} (V^\dagger)_{a_2, (j_3, …, j_N)}= \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} A^{j_2}_{\alpha_1, \alpha_2} \psi_{(a_2, j_3),(j_4, … , j_N)}$$. 
+$$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} U_{(a_1 j_2), (j_3, … , j_N)} \Sigma_{\alpha_2, \alpha_2} (V^\dagger)_{a_2, (j_3, …, j_N)}= \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} A^{j_2}_{\alpha_1, \alpha_2} \psi_{(a_2, j_3),(j_4, … , j_N)}$$
 
-We can continue this process to build the state entirely out of $$A^{j_n}_{\alpha_{n-1},\alpha_n}$$ type objects and graphically this looks like:
+We can continue this process to build the state entirely out of $$A^{j_n}$$ tensors and graphically this looks like:
 
 <p align="center">
  <img src="/_img/leftcanonicalform.png" alt="left canonical form" width="400" height="auto"/>
@@ -131,22 +129,14 @@ We can continue this process to build the state entirely out of $$A^{j_n}_{\alph
 
 The above form is referred to as “left canonical form” — if we started chain of SVD from the right, we could alternatively reach the “right canonical form”, and working from both ends and keeping at least one matrix of singular values around would yield a “mixed canonical form”. 
 
+* truncation 
+* left vs right canonical form
+* more concrete defs of SVD
+
+
+
 ### DMRG and iDMRG
 
-* DMRG from truncation of density matrix
-* DMRG algorithm and maybe examples
-* Advantage of iDMRG for some systems
-
-### Connection to topological matter
-
-The tensor network methods we have looked at so far are relevant for one and some two dimensional systems and can provide us with information about the ground state wavefunction. Several works in the mid 2000s helped lay the groundwork for a connection between topological phases and tensor network methods, showing that important details of a topological phase, such as the braiding statistics of the quasiparticle excitations, could be extracted from the ground state wavefunction of the system.  
-
-[Levin and Wen](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.96.110405) and [Preskill and Kitaev](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.96.110404) concurrently discovered that in gapped topological phases of matter, the area law for entanglement gains an additional, _topological_ contribution. This topological entanglement entropy (TEE) was eventually shown to be a partial classification of topological phases, as it vanishes for noninteracting topological phases such as Chern insulators or time-reversal invariant topological insulators. However, [Haldane and Li](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.010504) later realized that the _entanglement spectrum_ can encode properties of the edge modes the system and thereby provide more avenues for tensor network methods to be applied to diagnose and classify topological phases. 
-
-We will review the strategy behind a series of applications based on the foundations mentioned above, looking at how tensor networks can shed light on the complicated physics of fractional quantum Hall states. 
-
-* Cincio and Vidal paper sketch?
-* Zaletel flux attachment scheme
-* Application to FQHE Zaletel paper
+We now briefly want to sketch the density matrix renormalization group (DMRG) algorithm for finding the ground state properties of quantum systems. In view of MPS, the DMRG algorithm can be thought of as variationally minimizing the ground state energy over the space of MPS.
 
 
