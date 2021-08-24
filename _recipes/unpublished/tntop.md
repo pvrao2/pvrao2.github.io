@@ -127,13 +127,28 @@ We can continue this process to build the state entirely out of $$A^{j_n}$$ tens
  <img src="/_img/leftcanonicalform.png" alt="left canonical form" width="400" height="auto"/>
 </p> 
 
-The above form is referred to as “left canonical form” — if we started chain of SVD from the right, we could alternatively reach the “right canonical form”, and working from both ends and keeping at least one matrix of singular values around would yield a “mixed canonical form”. 
+The above form is referred to as “left canonical form” as the matrices that build our MPS were built from the $$U$$ type matrices in SVD. If we were to cut our MPS in to two parts $$A$$ and $$B$$, with
+
+$$\ket{\alpha_l}_A = A^{j_1}A^{j_2} \cdots A^{j_l} \ket{j_1, j_2, … , j_l} \\;\;\&\;\; \ket{\alpha_l}_B = A^{j_{l+1}} \cdots A^{j_N} \ket{j_{l+1},… , j_N} $$
+
+Then the overall state can be expressed in a SD-like form:
+
+$$\ket{\psi} = \sum\limits_{\alpha_l} \ket{\alpha_l}_A \ket{\alpha_l}_B$$
+
+This unfortunately is not equivalent to the SD, as the $$A$$ matrices are left-normalized (due to the fact that $$U^\dagger U = I \neq U U^\dagger$$), which leads to the statement that the left states $$\brace \ket{\alpha_l}_A \rbrace$$ form an orthonormal basis but the right states do not. We would run into similar issues with the “right canonical form”, where the chain of SVD is started from the $$N$$-th site and the MPS matrices $$B^{j_i}$$are built from the right-unitary SVD matrices $$V^\dagger$$. There the right states would form an orthonormal basis, but not the left states. 
+
+There is a simple fix, however, to actually identify our MPS with a SD and to thereby have direct access to engtanglement information, and that is to use a mixed canonical form:
+
+$$\ket{\psi} = \sum\limits_{j_1, … , j_N} A^{j_1} \cdots A^{j_l} \Sigma B^{j_{l+1}} \cdots B^{j_N} \ket{j_1, … , j_N}$$
+
+If we now split this state into two subsystems $$A$$ and $$B$$, with $$A$$ including all sites up to $$l$$ and $$B$$ representing the sites $$l+2$$ onwards, the state now takes the form of a SD:
+
+$$ \ket{\psi} = \sum\limits_{\alpha_l} \sigma_a \ket{\alpha_l}_A \ket{\alpha_l}_B$$
+
+where the Schmidt values $$\sigma_a$$ are the entries of the $$\Sigma$$ matrix. The families of states representing each subsystem are orthonormal in this case by construction. In this sense, we can directly relate MPS to the SD, and hence we can also consider the entanglement-based truncation of MPS. In the mixed canonical form, we can consider throwing away subleading Schmidt values $\sigma_a$ and approximating our MPS. 
 
 * truncation 
-* left vs right canonical form
 * more concrete defs of SVD
-
-
 
 ### DMRG and iDMRG
 
