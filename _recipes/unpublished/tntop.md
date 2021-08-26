@@ -84,7 +84,7 @@ We now add some important context to the Schmidt decomposition of quantum states
 * In terms of the Schmidt decomposition, we see that an area law state will have decreasing Schmidt values rather than constant ones.
 
 <p align="center">
- <img src="{{site.url}}/_img/arealaw.png" alt="area law" width=“700” height="auto"/>
+ <img src="{{site,url}}/_img/arealaw.png" alt="area law" width=“700” height="auto"/>
 </p> 
 
 As we see in the figure above from the [review paper](https://arxiv.org/abs/1805.00055) by Hauschild and Pollmann, we can think of the area law states as a special corner of the overall Hilbert space. The figure on the right compares the Schmidt values of the ground state of the transverse field Ising model versus a random state for $$N=16$$ spins - we can see that for this gapped ground state, the Schmidt values decay rapidly.
