@@ -145,11 +145,11 @@ If we now split this state into two subsystems $$A$$ and $$B$$, with $$A$$ inclu
 
 $$ \ket{\psi} = \sum\limits_{\alpha_l} \sigma_a \ket{\alpha_l}_A \ket{\alpha_l}_B$$
 
-where the Schmidt values $$\sigma_a$$ are the entries of the $$\Sigma$$ matrix. The families of states representing each subsystem are orthonormal in this case by construction. In this sense, we can directly relate MPS to the SD, and hence we can also consider the entanglement-based truncation of MPS. In the mixed canonical form, we can consider throwing away subleading Schmidt values $\sigma_a$ and approximating our MPS. 
+where the Schmidt values $$\sigma_a$$ are the entries of the $$\Sigma$$ matrix. The families of states representing each subsystem are orthonormal in this case by construction. In this sense, we can directly relate MPS to the SD, and hence we can also consider the entanglement-based truncation of MPS. In the mixed canonical form, we can consider throwing away subleading Schmidt values $$\sigma_a$$ and approximating our MPS. 
 
 ### DMRG and iDMRG
 
-We now briefly want to sketch the density matrix renormalization group (DMRG) algorithm for finding the ground state properties of quantum systems. In view of MPS, the DMRG algorithm can be thought of as variationally minimizing the ground state energy over the space of MPS--in other words, we want to find the MPS $\ket{\psi}$ such that
+We now briefly want to sketch the density matrix renormalization group (DMRG) algorithm for finding the ground state properties of quantum systems. In view of MPS, the DMRG algorithm can be thought of as variationally minimizing the ground state energy over the space of MPS--in other words, we want to find the MPS $$ket{\psi}$$ such that
 
 $$\frac{\bra{\psi} \hat{H} \ket{\psi}}{\braket{\psi}}$$
 
@@ -159,6 +159,6 @@ $$\hat{O} = \sum\limits_{j_1,...,j_N, j'_1,...,j'_N} c_{(j_1,...,j_N)(j'_1,...,j
 
 We can decompose the coefficients in a similar way to how we did with the coefficients of a quantum state, but first grouping pairs $$ c_{(j_1,...,j_N)(j'_1,...,j'_N)} \rightarrow  c_{(j_1 j'_1),...,(j_N j'_N)}$$ and having the double index $$j_i j'_i$$ take the role of a single index for an MPS. Ultimately it can be shown that any operator can be expressed in the following MPO representation:
 
-$$\hat{O} = \sum\limits_{{\bf j,j'}} W^{j_1 j'_1} \cdots W^{j_N j'N} \ket{{\bf j}} \bra{\bf{j'}}$$
+$$\hat{O} = \sum\limits_{\bf j,j'} W^{j_1 j'_1} \cdots W^{j_N j'_N} \ket{\bf j} \bra{\bf j'}
 
 
