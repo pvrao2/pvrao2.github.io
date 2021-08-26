@@ -14,7 +14,7 @@ In this post, we will summarize some of the basic ideas behind tensor network me
 ### SVD and image compression
 
 <p align="center">
-<img src="_img/image_compression.png" alt="image compression" width="500" height="auto"/>
+<img src="{{site.url}}/_img/image_compression.png" alt="image compression" width="500" height="auto"/>
 </p>
 
 We’ll begin by discussing the seemingly unrelated topic of image compression. It turns out that both tensor network methods and image compression rely fundamentally on the singular value decomposition (SVD). SVD factorizes a $$m \times n$$ matrix $$M$$ into a product of two unitary matrices and a diagonal matrix:
@@ -124,7 +124,7 @@ $$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^
 We can continue this process to build the state entirely out of $$A^{j_n}$$ tensors and graphically this looks like:
 
 <p align="center">
- <img src="/_img/leftcanonicalform.png" alt="left canonical form" width="400" height="auto"/>
+ <img src="{{site.url}}/_img/leftcanonicalform.png" alt="left canonical form" width="400" height="auto"/>
 </p> 
 
 The above form is referred to as “left canonical form” as the matrices that build our MPS were built from the $$U$$ type matrices in SVD. If we were to cut our MPS in to two parts $$A$$ and $$B$$, with
