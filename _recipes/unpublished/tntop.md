@@ -84,7 +84,7 @@ We now add some important context to the Schmidt decomposition of quantum states
 * In terms of the Schmidt decomposition, we see that an area law state will have decreasing Schmidt values rather than constant ones.
 
 <p align="center">
- <img src="{{site,url}}/_img/arealaw.png" alt="area law" width=“700” height="auto"/>
+ <img src="{{site.url}}/_img/arealaw.png" alt="area law" width="400" height="auto"/>
 </p> 
 
 As we see in the figure above from the [review paper](https://arxiv.org/abs/1805.00055) by Hauschild and Pollmann, we can think of the area law states as a special corner of the overall Hilbert space. The figure on the right compares the Schmidt values of the ground state of the transverse field Ising model versus a random state for $$N=16$$ spins - we can see that for this gapped ground state, the Schmidt values decay rapidly.
@@ -159,6 +159,6 @@ $$\hat{O} = \sum\limits_{j_1,...,j_N, j'_1,...,j'_N} c_{(j_1,...,j_N)(j'_1,...,j
 
 We can decompose the coefficients in a similar way to how we did with the coefficients of a quantum state, but first grouping pairs $$ c_{(j_1,...,j_N)(j'_1,...,j'_N)} \rightarrow  c_{(j_1 j'_1),...,(j_N j'_N)}$$ and having the double index $$j_i j'_i$$ take the role of a single index for an MPS. Ultimately it can be shown that any operator can be expressed in the following MPO representation:
 
-$$\hat{O} = \sum\limits_{\bf j,j'} W^{j_1 j'_1} \cdots W^{j_N j'_N} \ket{\bf j} \bra{\bf j'}
+$$\hat{O} = \sum\limits_{\bf j,j'} W^{j_1 j'_1} \cdots W^{j_N j'_N} \ket{\bf j} \bra{\bf j'}$$
 
 
