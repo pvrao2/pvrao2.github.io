@@ -84,7 +84,7 @@ We now add some important context to the Schmidt decomposition of quantum states
 * In terms of the Schmidt decomposition, we see that an area law state will have decreasing Schmidt values rather than constant ones.
 
 <p align="center">
- <img src="{{site.url}}/_img/arealaw.png" alt="area law" width="400" height="auto"/>
+ <img src="{{site.url}}/_img/arealaw.png" alt="area law" width="700" height="auto"/>
 </p> 
 
 As we see in the figure above from the [review paper](https://arxiv.org/abs/1805.00055) by Hauschild and Pollmann, we can think of the area law states as a special corner of the overall Hilbert space. The figure on the right compares the Schmidt values of the ground state of the transverse field Ising model versus a random state for $$N=16$$ spins - we can see that for this gapped ground state, the Schmidt values decay rapidly.
@@ -159,6 +159,17 @@ $$\hat{O} = \sum\limits_{j_1,...,j_N, j'_1,...,j'_N} c_{(j_1,...,j_N)(j'_1,...,j
 
 We can decompose the coefficients in a similar way to how we did with the coefficients of a quantum state, but first grouping pairs $$ c_{(j_1,...,j_N)(j'_1,...,j'_N)} \rightarrow  c_{(j_1 j'_1),...,(j_N j'_N)}$$ and having the double index $$j_i j'_i$$ take the role of a single index for an MPS. Ultimately it can be shown that any operator can be expressed in the following MPO representation:
 
-$$\hat{O} = \sum\limits_{\bf j,j'} W^{j_1 j'_1} \cdots W^{j_N j'_N} \ket{\bf j} \bra{\bf j'}$$
+$$\hat{O} = \sum\limits_{\bf j,j'} v^L W^{j_1 j'_1} \cdots W^{j_N j'_N} v^R \ket{\bf j} \bra{\bf j'}$$
 
+The coefficients $$W^{j_i j'_i}$$ in our MPO play the role of the tensors in an MPS and the vectors $$v^L, v^R$$ determine the boundaries of the MPO. Now to find the energy of some MPS $\ket{\psi}$ with a hamiltonian $H$ in MPO form, we arrive at the tensor diagram below
+
+<p align="center">
+ <img src="{{site.url}}/_img/MPSenergy.png" alt="left canonical form" width="400" height="auto"/>
+</p> 
+
+The top and bottom tensors are our state $$\ket{\psi}$$ (with $$\bra{\psi}$$ on the bottom) and the Hamiltonian in MPO form is in the middle, with all external legs fully contracted to give us the energy. Now the goal is to variationally minimize the energy to find the ground state MPS of the Hamiltonian in an efficient way through DMRG. The tensor diagram above is a good lead-in to the general procedure: we want to optimize the energy _locally_ by working with two sites at a time and moving through the whole chain. The most computationally costly aspect of DMRG is this two-site optimization, where the two site wavefunction, encoded in $$\Theta$$, is updated to be the ground state of the effective two-site Hamiltonian. Once the new state $$\tilde{\Theta}$$ is found, we can do an SVD to break it up and get back to a mixed canonical MPS. 
+
+<p align="center">
+ <img src="{{site.url}}/_img/MPSenergy.png" alt="left canonical form" width="400" height="auto"/>
+</p> 
 
