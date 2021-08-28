@@ -145,7 +145,7 @@ If we now split this state into two subsystems $$A$$ and $$B$$, with $$A$$ inclu
 
 $$ \ket{\psi} = \sum\limits_{\alpha_l} \sigma_a \ket{\alpha_l}_A \ket{\alpha_l}_B$$
 
-where the Schmidt values $$\sigma_a$$ are the entries of the $$\Sigma$$ matrix. The families of states representing each subsystem are orthonormal in this case by construction. In this sense, we can directly relate MPS to the SD, and hence we can also consider the entanglement-based truncation of MPS. In the mixed canonical form, we can consider throwing away subleading Schmidt values $$\sigma_a$$ and approximating our MPS. 
+where the Schmidt values $$\sigma_a$$ are the entries of the $$\Sigma$$ matrix. The families of states representing each subsystem are orthonormal in this case by construction. In this sense, we can directly relate MPS to the SD, and hence we can also consider the entanglement-based truncation of MPS. In the mixed canonical form, we can consider throwing away subleading Schmidt values $$\sigma_a$$ and approximating our MPS. The number of singular values kept is referred to as the _bond dimension_, and the overall bond dimension for any tensor network is the maximum bond dimension for any individual site. 
 
 ### DMRG and iDMRG
 
@@ -161,15 +161,16 @@ We can decompose the coefficients in a similar way to how we did with the coeffi
 
 $$\hat{O} = \sum\limits_{\bf j,j'} v^L W^{j_1 j'_1} \cdots W^{j_N j'_N} v^R \ket{\bf j} \bra{\bf j'}$$
 
-The coefficients $$W^{j_i j'_i}$$ in our MPO play the role of the tensors in an MPS and the vectors $$v^L, v^R$$ determine the boundaries of the MPO. Now to find the energy of some MPS $\ket{\psi}$ with a hamiltonian $H$ in MPO form, we arrive at the tensor diagram below
+The coefficients $$W^{j_i j'_i}$$ in our MPO play the role of the tensors in an MPS and the vectors $$v^L, v^R$$ determine the boundaries of the MPO. Now to find the energy of some MPS $$\ket{\psi}$$ with a hamiltonian $$H$$ in MPO form, we arrive at the  diagram below
 
 <p align="center">
- <img src="{{site.url}}/_img/MPSenergy.png" alt="left canonical form" width="400" height="auto"/>
+ <img src="{{site.url}}/_img/mpsmpoenergy.png" alt="left canonical form" width="400" height="auto"/>
 </p> 
 
 The top and bottom tensors are our state $$\ket{\psi}$$ (with $$\bra{\psi}$$ on the bottom) and the Hamiltonian in MPO form is in the middle, with all external legs fully contracted to give us the energy. Now the goal is to variationally minimize the energy to find the ground state MPS of the Hamiltonian in an efficient way through DMRG. The tensor diagram above is a good lead-in to the general procedure: we want to optimize the energy _locally_ by working with two sites at a time and moving through the whole chain. The most computationally costly aspect of DMRG is this two-site optimization, where the two site wavefunction, encoded in $$\Theta$$, is updated to be the ground state of the effective two-site Hamiltonian. Once the new state $$\tilde{\Theta}$$ is found, we can do an SVD to break it up and get back to a mixed canonical MPS. 
 
 <p align="center">
- <img src="{{site.url}}/_img/MPSenergy.png" alt="left canonical form" width="400" height="auto"/>
+ <img src="{{site.url}}/_img/dmrgupdate.png" alt="dmrg update process" width="400" height="auto"/>
 </p> 
 
+This is the two-site update version of DMRG. There is also a version where only one site is updated at a time, and the two methods have various tradeoffs and individual advantages when applied to various systems (for an overview, see )
