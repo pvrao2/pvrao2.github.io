@@ -17,7 +17,11 @@ The tensor network methods we have looked at so far are relevant for one and som
 
 $$S  \approx \alpha L - \gamma$$
 
-This topological entanglement entropy (TEE) $$\gamma$$ was shown to be a partial classification of topological phases. It vanishes for noninteracting topological phases such as Chern insulators or time-reversal invariant topological insulators.  [Haldane and Li](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.010504) later realized that the _entanglement spectrum_ can encode properties of the edge modes the system and thereby provide more avenues for tensor network methods to be applied to diagnose and classify topological phases. Both the entanglement spectrum and TEE can be extracted from the ground state wavefunction, particularly when the ground state is approximated as an MPS and entanglement properties are readily accessible. 
+This topological entanglement entropy (TEE) $$\gamma$$ was shown to be a partial classification of topological phases, and is given by
+
+$$\gamma = \log \frac{D}{d_a}$$
+
+with $$d_a$$ the quantum dimension (one for abelian anyons, greater in other cases) and $$D  = \sum_a \sqrt{d_a^2}$$ the total quantum dimension. It vanishes for noninteracting topological phases such as Chern insulators or time-reversal invariant topological insulators.  [Haldane and Li](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.010504) later realized that the _entanglement spectrum_ can encode properties of the edge modes the system and thereby provide more avenues for tensor network methods to be applied to diagnose and classify topological phases. Both the entanglement spectrum and TEE can be extracted from the ground state wavefunction, particularly when the ground state is approximated as an MPS and entanglement properties are readily accessible. 
 
 ### iDMRG for identifying topological phases
 
@@ -25,12 +29,13 @@ The applications we focus on ([here](https://arxiv.org/abs/1211.3733) and [here]
 
 * topological entanglement entropy
 
-If we apply iDMRG to our system and get back an approximate ground state wavefunction $$\ket{\Psi}$$, in the form of a MPS, we can cut our system in half and study the Schmidt decomposition of the halves of the system. Looking at the Renyi entropy
+If we apply iDMRG to our system and get back an approximate ground state wavefunction $$\ket{\Psi}$$, in the form of a MPS, we can cut our system in half and study the Schmidt decomposition of the halves of the system. Looking at the cut dependence of the Renyi entropy, we can extract the TEE.
 
 <p align="center">
  <img src="{{site.url}}/_img/diagnose_top_phase.png" alt="singular values" width="450" height="auto"/>
 </p> 
 
+The example above shows the extraction of the TEE for the $$\nu = 2/5$$ fractional quantum Hall state, whose ground state was found using iDMRG on an infinite cylinder. Here the length dependence distinguishes the usual entropy from the TEE as $$\gamma = L \frac{\partial S}{\partial L} - S(L)$$. Here $$\gamma \rightarrow \frac{1}{2} \log 5$$, as expected for a system with five abelian anyons. 
 
 * Cincio and Vidal paper sketch?
 * Zaletel flux attachment scheme
