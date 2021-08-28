@@ -121,7 +121,7 @@ The result is the familiar $$U, V^\dagger$$ and $$\Sigma$$ matrices where the la
 
 $$\psi_{j_1, … , j_N} = \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} U_{(a_1 j_2), (j_3, … , j_N)} \Sigma_{\alpha_2, \alpha_2} (V^\dagger)_{a_2, (j_3, …, j_N)}= \sum\limits_{\alpha_1}^{\chi_1}\sum\limits_{\alpha_2}^{\chi_2} A^{j_1}_{\alpha_1} A^{j_2}_{\alpha_1, \alpha_2} \psi_{(a_2 j_3),(j_4, … , j_N)}$$
 
-We can continue this process to build the state entirely out of $$A^{j_n}$$ tensors and graphically this looks like:
+We can continue this process to build the state entirely out of $$A$$ tensors and graphically this looks like:
 
 <p align="center">
  <img src="{{site.url}}/_img/leftcanonicalform.png" alt="left canonical form" width="400" height="auto"/>
@@ -129,13 +129,13 @@ We can continue this process to build the state entirely out of $$A^{j_n}$$ tens
 
 The above form is referred to as “left canonical form” as the matrices that build our MPS were built from the $$U$$ type matrices in SVD. If we were to cut our MPS in to two parts $$A$$ and $$B$$, with
 
-$$\ket{\alpha_l}_A = A^{j_1}A^{j_2} \cdots A^{j_l} \ket{j_1, j_2, … , j_l} \\;\;\&\;\; \ket{\alpha_l}_B = A^{j_{l+1}} \cdots A^{j_N} \ket{j_{l+1},… , j_N} $$
+$$\ket{\alpha_l}_A = A^{j_1}A^{j_2} \cdots A^{j_l} \ket{j_1, j_2, … , j_l} \;\;\&\;\; \ket{\alpha_l}_B = A^{j_{l+1}} \cdots A^{j_N} \ket{j_{l+1},… , j_N} $$
 
 Then the overall state can be expressed in a SD-like form:
 
 $$\ket{\psi} = \sum\limits_{\alpha_l} \ket{\alpha_l}_A \ket{\alpha_l}_B$$
 
-This unfortunately is not equivalent to the SD, as the $$A$$ matrices are left-normalized (due to the fact that $$U^\dagger U = I \neq U U^\dagger$$), which leads to the statement that the left states $$\brace \ket{\alpha_l}_A \rbrace$$ form an orthonormal basis but the right states do not. We would run into similar issues with the “right canonical form”, where the chain of SVD is started from the $$N$$-th site and the MPS matrices $$B^{j_i}$$are built from the right-unitary SVD matrices $$V^\dagger$$. There the right states would form an orthonormal basis, but not the left states. 
+This unfortunately is not equivalent to the SD, as the $$A$$ matrices are left-normalized (due to the fact that $$U^\dagger U = I \neq U U^\dagger$$), which leads to the statement that the left states $$ \lbrace \ket{\alpha_l}_A \rbrace$$ form an orthonormal basis but the right states do not. We would run into similar issues with the “right canonical form”, where the chain of SVD is started from the $$N$$-th site and the MPS matrices $$B^{j_i}$$are built from the right-unitary SVD matrices $$V^\dagger$$. There the right states would form an orthonormal basis, but not the left states. 
 
 There is a simple fix, however, to actually identify our MPS with a SD and to thereby have direct access to engtanglement information, and that is to use a mixed canonical form:
 
@@ -149,7 +149,7 @@ where the Schmidt values $$\sigma_a$$ are the entries of the $$\Sigma$$ matrix. 
 
 ### DMRG and iDMRG
 
-We now briefly want to sketch the density matrix renormalization group (DMRG) algorithm for finding the ground state properties of quantum systems. In view of MPS, the DMRG algorithm can be thought of as variationally minimizing the ground state energy over the space of MPS--in other words, we want to find the MPS $$ket{\psi}$$ such that
+We now briefly want to sketch the density matrix renormalization group (DMRG) algorithm for finding the ground state properties of quantum systems. In view of MPS, the DMRG algorithm can be thought of as variationally minimizing the ground state energy over the space of MPS--in other words, we want to find the MPS $$\ket{\psi}$$ such that
 
 $$\frac{\bra{\psi} \hat{H} \ket{\psi}}{\braket{\psi}}$$
 
