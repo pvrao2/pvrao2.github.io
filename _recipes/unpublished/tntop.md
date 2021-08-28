@@ -164,13 +164,13 @@ $$\hat{O} = \sum\limits_{\bf j,j'} v^L W^{j_1 j'_1} \cdots W^{j_N j'_N} v^R \ket
 The coefficients $$W^{j_i j'_i}$$ in our MPO play the role of the tensors in an MPS and the vectors $$v^L, v^R$$ determine the boundaries of the MPO. Now to find the energy of some MPS $$\ket{\psi}$$ with a hamiltonian $$H$$ in MPO form, we arrive at the  diagram below
 
 <p align="center">
- <img src="{{site.url}}/_img/mpsmpoenergy.png" alt="left canonical form" width="400" height="auto"/>
+ <img src="{{site.url}}/_img/mpsmpoenergy.png" alt="left canonical form" width="700" height="auto"/>
 </p> 
 
 The top and bottom tensors are our state $$\ket{\psi}$$ (with $$\bra{\psi}$$ on the bottom) and the Hamiltonian in MPO form is in the middle, with all external legs fully contracted to give us the energy. Now the goal is to variationally minimize the energy to find the ground state MPS of the Hamiltonian in an efficient way through DMRG. The tensor diagram above is a good lead-in to the general procedure: we want to optimize the energy _locally_ by working with two sites at a time and moving through the whole chain. The most computationally costly aspect of DMRG is this two-site optimization, where the two site wavefunction, encoded in $$\Theta$$, is updated to be the ground state of the effective two-site Hamiltonian. Once the new state $$\tilde{\Theta}$$ is found, we can do an SVD to break it up and get back to a mixed canonical MPS. 
 
 <p align="center">
- <img src="{{site.url}}/_img/dmrgupdate.png" alt="dmrg update process" width="400" height="auto"/>
+ <img src="{{site.url}}/_img/dmrgupdate.png" alt="dmrg update process" width="700" height="auto"/>
 </p> 
 
 This is the two-site update version of DMRG. There is also a version where only one site is updated at a time, and the two methods have various tradeoffs and individual advantages when applied to various systems (for an overview, see )
