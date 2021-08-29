@@ -39,12 +39,41 @@ The example above shows the extraction of the TEE for the $$\nu = 2/5$$ fraction
 
 *Flux attachment and entanglement spectrum
 
-In addition to encoding some properties of [edge modes](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.010504), the entanglement spectrum can also be used to about the quantized responses of a topological phase with some symmetries. To illustrate this (see [here](https://arxiv.org/abs/1405.6028) for more details), we can consider an infinite 1D chain:
+In addition to encoding some properties of [edge modes](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.010504), the entanglement spectrum can also be used to about the quantized responses of a topological phase with some symmetries. To illustrate this (see [here](https://arxiv.org/abs/1405.6028) for more details), we can consider a gapped and infinite 1D chain:
 
 <p align="center">
  <img src="{{site.url}}/_img/ringdecomposition.png" alt="singular values" width="450" height="auto"/>
 </p> 
 
-* Application to FQHE Zaletel paper
+Above the top image shows the infinite chain and the finite correlation length that doesn't scale with the volume of the system (in this case the length) owing to the fact that the system is gapped. Two Schmidt decompositions of the system yields the second figure, with Schmidt values $$s_q$$ and $$s_p$$ from each SD. To view the segment $$B$$ as a ring, one can trace over the outer indices, where the ground state on the ring is viewed as
+
+$$\ket{\psi_o^{I}} = \sum\limits_p s_p \ket{p,p}_B + \mathcal{O}(e^{-L/\xi})$$
+
+To add flux through the ring, it is sufficient to apply a twisted boundary condition to the edges of the segment $$B$$ before gluing it together, as shown in the bottom-most figure. The resulting ground state on the ring, with flux (under a symmetry $$g$$) added, is 
+
+$$ \ket{\psi_o^{(g)}} = \sum\limits_{p,q} s_q \ket{p,q}_B U^{(g)}_{qp} + \mathcal{O}(e^{-L/\xi})$$
+
+We now relate this to some concrete responses to the inserted flux. As a first example, the Berry phase $$\gamma_B$$ associated with inserting a $$U(1)$$ flux $$\Phi$$ is given by
+
+$$\gamma_B = \int_0^{2\pi} d\Phi A(\Phi) - i\log\braket{\psi_o^0}{\psi_o^{2\pi}} \rightarrow e^{i\gamma_B} = \exp{2\pi i\sum\limits_p s_p^2 Q_p}$$
+
+We see the Berry phase is related to the entanglement spectrum (Schmidt values $$s_p$$) and charge of the Schmidt state $$Q_p$$. In 1D, this Berry phase can be interpreted as a polarization, which in this case is given by the average charge of each Schmidt state with respect to the entanglement Hamiltonian. As another example, consider a 2D system on a torus which has the following symmetry under modular transformations  
+
+$$(x,y) \sim (x,y + L_y) \;\; \text{and} \;\;  (x+L_y,y) \sim (x,y+\tau L_y)$$
+
+Modifying the modular parameter 𝜏 takes us to an identical torus, and we wish to calculate a Berry phase as the ground state goes from $$\tau \rightarrow \tau +1$$. This is called the modular $$T$$ matrix, and it encodes the topological spin and chiral central charge of the edge of the system ([see](https://www.worldscientific.com/doi/abs/10.1142/S0217979293003644)). If we collapse each ring on the torus at fixed x to a single site, we can view the translation $$e^{iP_y \delta y)$$ as a U(1) transformation 
+ with $\Phi = 2\pi \tau$. The Schmidt states in this case have a quantized momenta $k_p$ and the Berry phase (T matrix) is
+ 
+ $$\gamma_T = \exp(i s_p^2 k_y L_y)
+
+In this case the Berry phase can be viewed as a momentum polarization and again it is given by the average momentum of each Schmidt state with respect to the entanglement Hamiltnonian. For fractional quantum Hall states, modular $$T$$ matrix is also related to the topological spin, chiral central charge and Hall viscosity of the system, 
+
+$$(gamma_T)_{ab} =  \delta_{ab} \exp i(h_a - \frac{c}{24} - \frac{\eta_H}{2\pi \hbar} L_x^2)$$
+
+By probing the entanglement spectrum one can also learn about these quantities. For example for the $$\nu = 2/5$$ fractional quantum Hall state, the chiral central charge $$c$$, topological spin $$h$$ and shift $$\mathcal{S} \sim \eta_H$$ are measured to their expected values of 2/24, 1/5, 4/16 through this method. 
+
+<p align="center">
+ <img src="{{site.url}}/_img/fqhe.png" alt="singular values" width="450" height="auto"/>
+</p> 
 
 
