@@ -1,13 +1,13 @@
 ---
 
 layout: blogpost
-title: Tensor networks & topology (1/2)
+title: Tensor networks & topology	
 date: August 2, 2021
 description: overview of tensor networks & their application to topological matter
 
 ---
 
-## Tensor networks & topology (1/2)
+## Tensor networks & topology 
 
 In this post, we will summarize some of the basic ideas behind tensor network methods for simulating quantum matter and touch on some of the applications of these methods to diagnosing and studying topological phases of matter. 
 
