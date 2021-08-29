@@ -19,7 +19,7 @@ $$S  \approx \alpha L - \gamma$$
 
 This topological entanglement entropy (TEE) $$\gamma$$ was shown to be a partial classification of topological phases, and is given by
 
-$$\gamma = \log \frac{D}{d_a}$$
+$$\gamma = \log D - \log{d_a}$$
 
 with $$d_a$$ the quantum dimension (one for abelian anyons, greater in other cases) and $$D  = \sum_a \sqrt{d_a^2}$$ the total quantum dimension. It vanishes for noninteracting topological phases such as Chern insulators or time-reversal invariant topological insulators.  [Haldane and Li](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.010504) later realized that the _entanglement spectrum_ can encode properties of the edge modes the system and thereby provide more avenues for tensor network methods to be applied to diagnose and classify topological phases. Both the entanglement spectrum and TEE can be extracted from the ground state wavefunction, particularly when the ground state is approximated as an MPS and entanglement properties are readily accessible. 
 
@@ -37,8 +37,14 @@ If we apply iDMRG to our system and get back an approximate ground state wavefun
 
 The example above shows the extraction of the TEE for the $$\nu = 2/5$$ fractional quantum Hall state, whose ground state was found using iDMRG on an infinite cylinder. Here the length dependence distinguishes the usual entropy from the TEE as $$\gamma = L \frac{\partial S}{\partial L} - S(L)$$. Here $$\gamma \rightarrow \frac{1}{2} \log 5$$, as expected for a system with five abelian anyons. 
 
-* Cincio and Vidal paper sketch?
-* Zaletel flux attachment scheme
+*Flux attachment and entanglement spectrum
+
+In addition to encoding some properties of [edge modes](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.010504), the entanglement spectrum can also be used to about the quantized responses of a topological phase with some symmetries. To illustrate this (see [here](https://arxiv.org/abs/1405.6028) for more details), we can consider an infinite 1D chain:
+
+<p align="center">
+ <img src="{{site.url}}/_img/ringdecomposition.png" alt="singular values" width="450" height="auto"/>
+</p> 
+
 * Application to FQHE Zaletel paper
 
 
