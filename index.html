@@ -2,19 +2,89 @@
 layout: default
 ---
 
-<div class="container -alternate1">
-  <p class="about">
-    Hi. I’m Pranav, a PhD candidate in theoretical condensed matter physics.
-  </p>
-  <div>
+<div class="container -spaced -alternate2">
+  <div class="recipe__title">
+    <p class="lede">
+      I'm a doctoral candidate in Physics at the University of Illinois, and live in Champaign. 
+    </p>
+    <p>
+       My work is focused on geometric responses of topological materials and some exotic classical fluids. 
+    </p>
+    <p>
+      In my free time, I home-roast coffee, make pizza, and quick-pickle things. 
+    </p>
+  </div>
+  
+  <p>
+<img src="{{site.url}}/_img/website_picture-min.png" style="display: block; margin: auto;" width=75%; height=auto; />
+</p>
+
+  
+  <div></div>
+</div>
+
+
+
+
+<div class="container recipe">
+  <div class="">
+  </div>
+  <div class="recipe__title">
+    <h2>Experience</h2>
+
+    {% include resumeitem.html
+      date = "2018&mdash;Now"
+      role = "Research Assistant"
+      employer = "<a href='https://icmt.illinois.edu/'>Institute for Condensed Matter Theory</a>"
+    description = "<p> Transport in topological materials and some exotic classical systems with <a href='https://icmt.illinois.edu/people/profile.asp?p=bbradlyn'>Barry Bradlyn</a>. Some of our <a href='https://scholar.google.com/citations?user=_7GMel4AAAAJ&hl=en'>work.</a>"
+    %}
+    {% include resumeitem.html
+      date = "2017&mdash;2018"
+      role = "Rotation Student"
+      employer = "<a href='http://www.igb.illinois.edu/'>Institute for Genomic Biology</a>"
+      description = "<p> Half year rotation in the lab of <a href='https://song.igb.illinois.edu/index.html '>Jun Song</a>, studying machine learning approaches to cancer genomics </p>
+      <ul>
+        <li>Took courses in <a href='https://courses.engr.illinois.edu/ece598pv/fa2017/home.html'>machine learning</a> and bioinformatics.</li>
+        <li>Presented papers in neural network applications for genomics to the group journal club.</<li>
+      </ul>"
+    %}
+    {% include resumeitem.html
+      date = "2019&mdash;Now"
+      role = "Teaching Assistant"
+      employer = "U of I Physics Department"
+      description = "
+      <ul>
+        <li>Led discussion section for introductory physics classes. </<li>
+        <li>Peer mentor for two different undergraduate students.</li>
+      </ul>"
+    %}
+    {% include resumeitem.html
+      date = "2013&mdash;2016"
+      role = "Research Assistant"
+      employer = "<a href='https://lsa.umich.edu/lctp'>Michigan Center for Theoretical Physics</a>"
+      description = "<p> AdS/CFT with a focus on potential condensed matter applications with <a href='https://lsa.umich.edu/physics/people/faculty/jimliu.html'>James Liu</a>.
+      </ul>"
+    %}
   </div>
 </div>
 <div class="container recipe">
-  <div></div>
-  <div>
-    <p class="lede">
-     I'm entering my fifth year advised by <a href="https://www.physics.illinois.edu/people/directory/profile/bbradlyn">Barry Bradlyn</a> at Illinois.  See here for <a href="/about/">more</a> about me and for some scattered
-      posts on various topics  <a href="/blog/">see</a>.  </p>
+  <div class=" ">
+  </div>
+  <div class="recipe__title">
+    <h2>Study</h2>
 
+    {% include resumeitem.html
+      date = "2017&mdash;Now"
+      role = "Doctorate in Physics"
+      employer = "<a href='https://physics.illinois.edu/'>University of Illinois</a>"
+      description = "Urbana-Champaign, Illinois"
+
+    %}
+    {% include resumeitem.html
+      date = "2012&mdash;2016"
+      role = "Bachelors in Honors Physics and Mathematics"
+      employer = "<a href='https://www.umich.edu'>University of Michigan</a>"
+      description = "Ann Arbor, Michigan"
+    %}
   </div>
 </div>
