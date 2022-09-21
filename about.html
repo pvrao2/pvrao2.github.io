@@ -32,7 +32,19 @@ layout: default
   </div>
   <div class="recipe__title">
     <h2>Experience</h2>
-
+    
+   {% include resumeitem.html
+      date = "Summer 2022"
+      role = "URA/SNL Summer Fellow"
+      employer = "<a href='https://www.sandia.gov'>Sandia National Laboratory</a>"
+    description = "<p> Geometric deep learning (specifically using Euclidean Neural Networks) for quantum chemistry, with applications to biomolecular simulation, with <a href='https://joshrackers.owlstown.net'>Josh Rackers</a>. %}
+    {% include resumeitem.html
+      date = "Jan 2022 &mdash; Now (Excluding Summer 2022)"
+      role = "Research Intern"
+      employer = "<a href='https://www.nasa.gov/content/nasa-quantum-artificial-intelligence-laboratory-quail'>NASA Quantum Artificial Intelligence Laboratory (QuAIL)</a>"
+      description = "<p> Research Intern working with <a href='https://scholar.google.com/citations?user=2WOwa5oAAAAJ&hl=en'>Zhihui Wang</a> on quantum algorithms, particularly a QAOA inspired approach to Grover's algorithm."
+    %}
+    
     {% include resumeitem.html
       date = "2018&mdash;Now"
       role = "Research Assistant"
