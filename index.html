@@ -5,10 +5,10 @@ layout: default
 <div class="container -spaced -alternate2">
   <div class="recipe__title">
     <p class="lede">
-      I'm a doctoral candidate in Physics at the University of Illinois, and live in Champaign. 
+      I am a Machine Learning Scientist at Prescient Design / Genentech.
     </p>
     <p>
-       My work is focused on geometric responses of topological materials and some exotic classical fluids. 
+       My work is focused on ML approaches to antibody drug discovery, and I'm particularly focused on methods that can model the complex three dimensional structures of proteins. 
     </p>
     <p>
       In my free time, I home-roast coffee, make pizza, and quick-pickle things. 
@@ -31,26 +31,27 @@ layout: default
   </div>
   <div class="recipe__title">
     <h2>Experience</h2>
+
+   {% include resumeitem.html
+      date = "February 2023 - Present"
+      role = "Associate Machine Learning Scientist</a>"
+      employer = "<a href='https://www.gene.com/scientists/our-scientists/prescient-design'>Prescient Design / Genentech</a>"
+    description = "<p> Machine learning (especially geometric deep learning) for antibody discovery." %}
     
-    {% include resumeitem.html
+   {% include resumeitem.html
       date = "Summer 2022"
-      role = "URA/SNL Summer Fellow"
+      role = "<a href='https://www.ura-hq.org/awards/summerfellowship/'>URA/SNL Summer Fellow</a>"
       employer = "<a href='https://www.sandia.gov'>Sandia National Laboratory</a>"
-    description = "<p> Geometric deep learning (specifically using Euclidean Neural Networks) for quantum chemistry, with applications to biomolecular simulation, with <a href='https://joshrackers.owlstown.net'>Josh Rackers</a>."
-    %}
-    
-    
+    description = "<p> Geometric deep learning (specifically using Euclidean Neural Networks) for quantum chemistry, with applications to biomolecular simulation, with <a href='https://joshrackers.owlstown.net'>Josh Rackers</a>." %}
     {% include resumeitem.html
-      date = "Jan 2022 &mdash; Now (Excluding Summer 2022)"
+      date = "Jan 2022 &mdash; Dec 2022 (Excluding Summer 2022)"
       role = "Research Intern"
       employer = "<a href='https://www.nasa.gov/content/nasa-quantum-artificial-intelligence-laboratory-quail'>NASA Quantum Artificial Intelligence Laboratory (QuAIL)</a>"
       description = "<p> Research Intern working with <a href='https://scholar.google.com/citations?user=2WOwa5oAAAAJ&hl=en'>Zhihui Wang</a> on quantum algorithms, particularly a QAOA inspired approach to Grover's algorithm."
     %}
     
- 
-    
     {% include resumeitem.html
-      date = "2018&mdash;Now"
+      date = "June 2018&mdash; Jan 2023"
       role = "Research Assistant"
       employer = "<a href='https://icmt.illinois.edu/'>Institute for Condensed Matter Theory</a>"
     description = "<p> Transport in topological materials and some exotic classical systems with <a href='https://icmt.illinois.edu/people/profile.asp?p=bbradlyn'>Barry Bradlyn</a>. Some of our <a href='https://scholar.google.com/citations?user=_7GMel4AAAAJ&hl=en'>work.</a>"
@@ -66,7 +67,7 @@ layout: default
       </ul>"
     %}
     {% include resumeitem.html
-      date = "2019&mdash;Now"
+      date = "Sep 2019&mdash; Jan 2023"
       role = "Teaching Assistant"
       employer = "U of I Physics Department"
       description = "
@@ -91,7 +92,7 @@ layout: default
     <h2>Study</h2>
 
     {% include resumeitem.html
-      date = "2017&mdash;Now"
+      date = "2017&mdash;2023"
       role = "Doctorate in Physics"
       employer = "<a href='https://physics.illinois.edu/'>University of Illinois</a>"
       description = "Urbana-Champaign, Illinois"
